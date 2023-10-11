@@ -12,7 +12,7 @@ export const LinkNav = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: #608b38;
+    background-color: #7b9cd0;
   }
 `;
 

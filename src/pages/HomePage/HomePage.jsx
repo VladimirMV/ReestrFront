@@ -10,7 +10,7 @@ import { Advertising } from 'components/Advertising/Advertising';
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#608B38',
+      main: '#3f47cc',
     },
     secondary: {
       main: '#dee2ff',
@@ -62,10 +62,10 @@ const Home = () => {
             }}
           >
             <Grid container spacing={2}>
-              <Section title=" Phonebook!">
+              <Section title=" Registry">
                 <Advertising
-                  text="PhoneBook is an application that allows you to keep a contact book. You can add, edit and delete entries.
-Enjoy using PhoneBook"
+                  text="Registry is an application that allows you to keep a contact book. You can add, edit and delete entries.
+Enjoy using Registry"
                 />
               </Section>
             </Grid>

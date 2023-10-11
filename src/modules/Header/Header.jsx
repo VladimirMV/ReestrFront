@@ -6,7 +6,7 @@ import NavbarAuth from '../NavbarAuth/NavbarAuth';
 import { useAuth } from 'hooks/useAuth';
 import { UserMenu } from 'modules/UserMenu/UserMenu';
 import { Navigation } from 'modules/Navigation/Navigation';
-import Logo from 'img/contact-book.png';
+import Logo from 'img/logo-mobi.jpg';
 
 import {
   Box,

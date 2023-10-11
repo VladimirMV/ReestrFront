@@ -13,7 +13,7 @@ import { customStylesFonContacts } from 'styles/fonStyle';
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#defabb',
+      main: '#d7eef1',
     },
     secondary: {
       main: '#d4bff9',
@@ -53,7 +53,7 @@ const Contacts = () => {
           square
           sx={{
             height: '100%',
-            background: '#e5f1d7',
+            background: '#d7eef1',
             backdropFilter: 'blur(7.5px)',
           }}
         >
@@ -67,9 +67,9 @@ const Contacts = () => {
             }}
           >
             <Grid container spacing={2}>
-              <Section title="PhoneBook">
+              <Section title="Registry">
                 <ContactForm />
-                <Title title="Contacts" />
+                <Title title="Members" />
                 <Filter />
                 <ContactList />
               </Section>
