@@ -24,6 +24,7 @@ export const userSignUp = async credentials => {
 export const userLogin = async credentials => {
   const { data: result } = await authInstance.post('/auth/login', credentials);
   setAuthHeader(result.token);
+  console.log('login:servise===================', result);
   return result;
 };
 

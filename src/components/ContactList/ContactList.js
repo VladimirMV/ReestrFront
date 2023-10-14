@@ -48,10 +48,10 @@ function ContactList() {
       {!error && !isLoading && filteredContacts?.length > 0 && (
         <List>
           <ul>
-            {filteredContacts.map(({ name, number, id }) => {
+            {filteredContacts.map(({ fio, phone, id }) => {
               return (
                 <Fragment key={id}>
-                  <ContactItem name={name} number={number} id={id} />
+                  <ContactItem fio={fio} phone={phone} id={id} />
                 </Fragment>
               );
             })}

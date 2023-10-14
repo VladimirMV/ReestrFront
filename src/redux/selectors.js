@@ -12,7 +12,7 @@ export const selectError = ({ contacts }) => contacts.error;
 export const selectFilter = ({ filter }) => filter;
 
 export const selectContacts = ({ contacts }) =>
-  [...contacts.items].sort((a, b) => a.name.localeCompare(b.name));
+  [...contacts.items].sort((a, b) => a.fio.localeCompare(b.name));
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
@@ -22,9 +22,9 @@ export const selectFilteredContacts = createSelector(
     }
     const normalizedFilter = filter.toLowerCase();
     const filteredContacts = contacts.filter(
-      ({ name, number }) =>
-        name.toLowerCase().trim().includes(normalizedFilter) ||
-        number.trim().includes(normalizedFilter)
+      ({ fio, phone }) =>
+        fio.toLowerCase().trim().includes(normalizedFilter) ||
+        phone.trim().includes(normalizedFilter)
     );
     return filteredContacts;
   }

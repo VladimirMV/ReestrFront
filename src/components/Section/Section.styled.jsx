@@ -10,7 +10,7 @@ export const SectionWrapper = styled.section`
   // padding-bottom: 20px;
   // margin-bottom: 5px;
   max-width: 100%;
-  width: 43.75rem;
+  /* width: 43.75rem; */
   background-color: #d7eef1;
   color: ${props => props.theme.colors.black};
   text-shadow: 0 -0.4px 0.4px #ffffff, 0.4px 0.4px 0.4px #00000031;

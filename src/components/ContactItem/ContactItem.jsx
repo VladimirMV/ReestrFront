@@ -32,7 +32,8 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 // style
 // import { IoPersonRemove } from 'react-icons/io5';
 
-export const ContactItem = ({ name, number, id }) => {
+export const ContactItem = ({  fio, phone, id,  membershipfee, share
+}) => {
  
   
   const [selectedContact, setSelectedContact] = useState(null);
@@ -49,17 +50,17 @@ export const ContactItem = ({ name, number, id }) => {
  
   
   const setModalData = () => {
-   const selectContact = { id, name, number };
+   const selectContact = { id,  fio, phone };
     setSelectedContact(selectContact );
   };
 
-  function stringAvatar(name) {
+  function stringAvatar( fio) {
      
     return {
       sx: {
         bgcolor: getRandomHexColor(),
       },
-      children: abbrevName(name),
+      children: abbrevName( fio),
     };
   }
  
@@ -76,7 +77,7 @@ export const ContactItem = ({ name, number, id }) => {
                               <Avatar
               sx={{fontSize:"12px"}}
               onClick={() => setModalData()}
-                  {...stringAvatar(Object.values(name).join(''))}
+                  {...stringAvatar(Object.values( fio).join(''))}
                   
             />
             
@@ -84,8 +85,10 @@ export const ContactItem = ({ name, number, id }) => {
                       </ListItemAvatar>
           </Tooltip> 
           <ContactDescr>
-          <ListItemText primary={name} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={number} />
+          <ListItemText primary={ fio} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={phone} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={membershipfee} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={share} />
             <WrapperBtns>
             <ListItemSecondaryAction>
             <Tooltip label="Edit" color="#000" fontSize="xs">  
@@ -128,8 +131,8 @@ export const ContactItem = ({ name, number, id }) => {
  
 
 ContactItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+   fio: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
 
