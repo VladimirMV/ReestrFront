@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const authInstance = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://connections-api.herokuapp.com',
 });
 
 export const setAuthHeader = token => {
@@ -14,7 +14,7 @@ export const clearAuthHeader = () => {
 
 export const userSignUp = async credentials => {
   const { data: result } = await authInstance.post(
-    '/auth/register',
+    '/users/signup',
     credentials
   );
   setAuthHeader(result.token);
@@ -22,20 +22,20 @@ export const userSignUp = async credentials => {
 };
 
 export const userLogin = async credentials => {
-  const { data: result } = await authInstance.post('/auth/login', credentials);
+  const { data: result } = await authInstance.post('/users/login', credentials);
   setAuthHeader(result.token);
   return result;
 };
 
 export const userLogout = async () => {
-  const response = await authInstance.post('/auth/logout');
+  const response = await authInstance.post('/users/logout');
   clearAuthHeader();
   return response;
 };
 
 export const userCurrent = async token => {
   setAuthHeader(token);
-  const response = await authInstance.get('/auth/current');
+  const response = await authInstance.get('/users/current');
   return response;
 };
 
