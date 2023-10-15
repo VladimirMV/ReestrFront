@@ -37,7 +37,6 @@ function ContactList() {
   };
 
   const filteredContacts = getFilteredContacts(result);
-console.log("filteredContacts=----=-=-=--=",filteredContacts);
   return (
     <>
       {isLoading && contacts?.length === 0 && <Loader />}

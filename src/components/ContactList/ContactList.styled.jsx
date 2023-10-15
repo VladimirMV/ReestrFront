@@ -9,7 +9,7 @@ export const List = styled.ul`
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
   max-width: 100%;
-  width: 43.75rem;
+  width: 100%;
 `;
 
 export const Info = styled.div`

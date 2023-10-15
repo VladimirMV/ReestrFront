@@ -23,7 +23,9 @@ export const UserMenu = () => {
           >
             <Avatar
               alt="avatar"
-              src={`https://api.dicebear.com/6.x/croodles/svg`}
+              // src={`https://api.dicebear.com/6.x/croodles/svg`}
+              src={`http://localhost:3000/avatars/64b3c1cf1bc67075b3276ad1_Рисунок1.jpg`}
+              
               sx={{ width: 24, height: 24 }}
             />
           </StyledBadge>

@@ -79,6 +79,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
               <ListItemAvatar>
             <ModalPictureWrapper> 
                               <Avatar
+                              // src={`http://localhost:3000/avatars/Корж.jpg`}
               sx={{fontSize:"12px"}}
               onClick={() => setModalData()}
                   {...stringAvatar(Object.values( fio).join(''))}
@@ -89,8 +90,8 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
                       </ListItemAvatar>
           </Tooltip> 
           <ContactDescr>
-          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "350px"}} primary={ fio} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "100px"}} primary={phone} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "150px"}} primary={ fio} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "150px"}} primary={phone} />
           <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={membershipfee} />
           <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={share} />
             <WrapperBtns>

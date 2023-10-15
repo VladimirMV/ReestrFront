@@ -49,7 +49,9 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <BorderOutside>
           <BorderInside>
             <PhotoThumb>
-              <ModalPicture src={Av} alt="photo" width="260" />
+              {/* <ModalPicture src={Av} alt="photo" width="260" /> */}
+              <ModalPicture src={`http://localhost:3000/avatars/Корж.jpg`} alt="photo" width="260" />
+              
             </PhotoThumb>
           </BorderInside>
         </BorderOutside>
