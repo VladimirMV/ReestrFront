@@ -32,10 +32,12 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 // style
 // import { IoPersonRemove } from 'react-icons/io5';
 
-export const ContactItem = ({  fio, phone, id,  membershipfee, share
+export const ContactItem = ({  fio, phone, id, membershipfee, 
+            share,n,form , number, edrpu, passport, birthday, registrationplase, 
+            adress, payshare,email
+
 }) => {
  
-  
   const [selectedContact, setSelectedContact] = useState(null);
 
   const dispatch = useDispatch();
@@ -50,7 +52,9 @@ export const ContactItem = ({  fio, phone, id,  membershipfee, share
  
   
   const setModalData = () => {
-   const selectContact = { id,  fio, phone };
+   const selectContact = { fio, phone, id, membershipfee, 
+    share,n,form , number, edrpu, passport, birthday, registrationplase, 
+    adress, payshare,email };
     setSelectedContact(selectContact );
   };
 
@@ -69,7 +73,7 @@ export const ContactItem = ({  fio, phone, id,  membershipfee, share
   return (
     <Container maxWidth="md"  >
      
-      <List sx={{  width: "450px", marginLeft: 0, paddingLeft: 0 }}>
+      <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 0 }}>
         { <ListItem key={id}> 
          <Tooltip label="Click" color="#000" fontSize="xs">      
               <ListItemAvatar>
@@ -85,14 +89,14 @@ export const ContactItem = ({  fio, phone, id,  membershipfee, share
                       </ListItemAvatar>
           </Tooltip> 
           <ContactDescr>
-          <ListItemText primary={ fio} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={phone} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "350px"}} primary={ fio} />
+          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "100px"}} primary={phone} />
           <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={membershipfee} />
           <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={share} />
             <WrapperBtns>
             <ListItemSecondaryAction>
             <Tooltip label="Edit" color="#000" fontSize="xs">  
-            <IconButton sx={{   pl: 3 }}
+            <IconButton sx={{   pl: 0 }}
                 edge="end"
                         aria-label="Edit"
                  onClick={() => setModalData()}

@@ -12,6 +12,7 @@ export const Item = styled.li`
   gap: 8px;
   padding-bottom: 10px;
   border-bottom: 1px solid #fff;
+  width: 100%;
 
   color: ${props => props.theme.colors.black};
   text-shadow: ${props => props.theme.shadows.textShadow};

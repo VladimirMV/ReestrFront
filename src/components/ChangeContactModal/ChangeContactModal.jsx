@@ -33,11 +33,11 @@ export const ChangeContactModal = ({
   setModalIsOpen,
 }) => {
   const [formValues, setFormValues] = useState(data || {});
-
+console.log("formValues edit=======",formValues);
   const initialValues = { name: '', number: '' };
   const savedValues = {
-    name: data?.name || '',
-    number: data?.number || '',
+    name: data?.fio || '',
+    number: data?.phone || '',
   };
 
   const dispatch = useDispatch();

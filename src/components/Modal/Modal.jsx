@@ -24,7 +24,7 @@ Modal.setAppElement('#root');
 
 export const ContactModal = ({ isOpen, data, onClose }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
+  const fontSize = { fontSize: '20px',color : '#3f47cc'};
   const openChangeModal = () => {
     setModalIsOpen(true);
   };
@@ -33,13 +33,14 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
     setModalIsOpen(false);
     onClose();
   };
-
+  console.log("datas edit=======",data);
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel="Inline Styles Modal Example"
       style={customStyles}
+     
     >
       <CloseBtn onClick={onClose}>
         <MdOutlineClose />
@@ -54,12 +55,25 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         </BorderOutside>
       </PhotoWrap>
       <PictureDescr>
-        <p>{data?.name}</p>
+      <p>{'N: ' + data?.number}</p>
+     
+        <p style={fontSize}>{data?.fio}</p>
+      
+        <p>{'Членський внесок: ' + data?.membershipfee + ' грн'}</p>
+        <p>{'ПАЇ: ' + data?.share + ' грн'}</p>
+        <p>{'Виплати на паї : ' + data?.payshare + ' грн'}</p>
         <Tooltip label="Call" hasArrow bg="gray.300" color="#000" fontSize="xs">
           <p>
-            <a href={'tel:' + data?.number}>{data?.number}</a>
+            <a href={'tel:' + data?.phohe}>{data?.phone}</a>
           </p>
         </Tooltip>
+        <p>{'e-mail: ' + data?.email}</p>
+        <p>{'код ЄДРПОУ: ' + data?.edrpu}</p>
+        {/* <p>{'Форма: ' + data?.form}</p> */}
+        <p>{'Адрес: ' + data?.adress}</p>
+        <p>{'Дата рождения: ' + data?.birthday}</p>
+        <p>{'Регистрация: ' + data?.registrationplase}</p>
+        <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
       <Button onClick={openChangeModal}>
         <TfiPencil size="16" />

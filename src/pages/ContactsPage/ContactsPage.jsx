@@ -46,8 +46,8 @@ const Contacts = () => {
         <Grid
           item
           xs={12}
-          sm={6}
-          md={5}
+          sm={9}
+          md={9}
           component={Paper}
           elevation={24}
           square
@@ -66,7 +66,7 @@ const Contacts = () => {
               alignItems: 'center',
             }}
           >
-            <Grid container spacing={2}>
+            <Grid container spacing={4}>
               <Section title="Registry">
                 <ContactForm />
                 <Title title="Members" />
@@ -76,7 +76,7 @@ const Contacts = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={false} sm={6} md={7} />
+        <Grid item xs={false} sm={8} md={9} />
       </Grid>
     </ThemeProvider>
   );

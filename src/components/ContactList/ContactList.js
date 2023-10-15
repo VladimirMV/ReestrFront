@@ -37,7 +37,7 @@ function ContactList() {
   };
 
   const filteredContacts = getFilteredContacts(result);
-
+console.log("filteredContacts=----=-=-=--=",filteredContacts);
   return (
     <>
       {isLoading && contacts?.length === 0 && <Loader />}
@@ -48,10 +48,27 @@ function ContactList() {
       {!error && !isLoading && filteredContacts?.length > 0 && (
         <List>
           <ul>
-            {filteredContacts.map(({ fio, phone, id }) => {
+            {filteredContacts.map(({ fio, phone, id, membershipfee, 
+            share,n,form , number, edrpu, passport, birthday, registrationplase, 
+            adress, payshare, email}) => {
               return (
                 <Fragment key={id}>
-                  <ContactItem fio={fio} phone={phone} id={id} />
+                  <ContactItem fio={fio} 
+                  phone={phone} 
+                  id={id} 
+                  membershipfee ={membershipfee} 
+                  share ={share}                 
+                  n ={n}
+                  form = {form}
+                  number = {number}
+                  edrpu = {edrpu}
+                  passport = {passport}
+                  birthday  = {birthday}
+                  registrationplase = {registrationplase}
+                  adress  = {adress}
+                  payshare  = {payshare} 
+                  email= {email}              
+                  />
                 </Fragment>
               );
             })}
