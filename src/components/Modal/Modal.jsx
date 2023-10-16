@@ -45,10 +45,10 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
       <CloseBtn onClick={onClose}>
         <MdOutlineClose />
       </CloseBtn>
-      <PhotoWrap>
-        <BorderOutside>
-          <BorderInside>
-            <PhotoThumb>
+      <PhotoWrap width="260" height="260">
+        <BorderOutside width="260" height="260">
+          <BorderInside width="260" height="260">
+            <PhotoThumb  width="260" height="260" >
               {/* <ModalPicture src={Av} alt="photo" width="260" /> */}
               <ModalPicture src={`http://localhost:3000/avatars/Корж.jpg`} alt="photo" width="260" />
               
