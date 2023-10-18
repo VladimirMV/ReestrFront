@@ -24,8 +24,9 @@ export const UserMenu = () => {
             <Avatar
               alt="avatar"
               // src={`https://api.dicebear.com/6.x/croodles/svg`}
-              src={`http://localhost:3000/avatars/64b3c1cf1bc67075b3276ad1_Рисунок1.jpg`}
+              // src={`http://localhost:3000/avatars/64b3c1cf1bc67075b3276ad1_Рисунок1.jpg`}
               
+             src={`https://res.cloudinary.com/dzbll3bb6/image/upload/v1697575687/%D0%B0%D0%B2%D0%B0%D1%82%D0%B0%D1%80_lhmtcq.jpg`}
               sx={{ width: 24, height: 24 }}
             />
           </StyledBadge>

@@ -49,7 +49,7 @@ function ContactList() {
           <ul>
             {filteredContacts.map(({ fio, phone, id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
-            adress, payshare, email}) => {
+            adress, payshare, email, avatarUrl}) => {
               return (
                 <Fragment key={id}>
                   <ContactItem fio={fio} 
@@ -66,7 +66,8 @@ function ContactList() {
                   registrationplase = {registrationplase}
                   adress  = {adress}
                   payshare  = {payshare} 
-                  email= {email}              
+                  email= {email} 
+                  avatarUrl = {avatarUrl}             
                   />
                 </Fragment>
               );

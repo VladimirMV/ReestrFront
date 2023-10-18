@@ -34,7 +34,7 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 
 export const ContactItem = ({  fio, phone, id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
-            adress, payshare,email
+            adress, payshare,email,avatarUrl
 
 }) => {
  
@@ -54,7 +54,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
   const setModalData = () => {
    const selectContact = { fio, phone, id, membershipfee, 
     share,n,form , number, edrpu, passport, birthday, registrationplase, 
-    adress, payshare,email };
+    adress, payshare,email, avatarUrl };
     setSelectedContact(selectContact );
   };
 
@@ -79,7 +79,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
               <ListItemAvatar>
             <ModalPictureWrapper> 
                               <Avatar
-                              // src={`http://localhost:3000/avatars/Корж.jpg`}
+                               src={avatarUrl}
               sx={{fontSize:"12px"}}
               onClick={() => setModalData()}
                   {...stringAvatar(Object.values( fio).join(''))}

@@ -33,7 +33,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
     setModalIsOpen(false);
     onClose();
   };
-  console.log("datas edit=======",data);
+  // console.log("datas edit=======",data);
   return (
     <Modal
       isOpen={isOpen}
@@ -45,12 +45,12 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
       <CloseBtn onClick={onClose}>
         <MdOutlineClose />
       </CloseBtn>
-      <PhotoWrap width="260" height="260">
-        <BorderOutside width="260" height="260">
-          <BorderInside width="260" height="260">
-            <PhotoThumb  width="260" height="260" >
-              {/* <ModalPicture src={Av} alt="photo" width="260" /> */}
-              <ModalPicture src={`http://localhost:3000/avatars/Корж.jpg`} alt="photo" width="260" />
+      <PhotoWrap >
+        <BorderOutside >
+          <BorderInside >
+            <PhotoThumb   >
+             
+              <ModalPicture src={data?.avatarUrl} alt="photo" />
               
             </PhotoThumb>
           </BorderInside>

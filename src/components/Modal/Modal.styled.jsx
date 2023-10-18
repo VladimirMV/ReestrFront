@@ -101,7 +101,7 @@ export const PhotoWrap = styled.div`
   padding: 10px;
   max-width: 100%;
   width: 320px;
-  height: 320px;
+  height: 200px;
   border-radius: 50%;
 `;
 
@@ -109,6 +109,7 @@ export const BorderOutside = styled.div`
   padding: 7px;
   margin: 0 auto;
   width: 170px;
+  height: 170px;
   border-radius: 50%;
   border: none;
   margin-bottom: 10px;
