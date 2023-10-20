@@ -5,7 +5,7 @@ export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 42px;
+  gap: 15px;
   margin-bottom: ${props => props.theme.space[5]}px;
   padding-top: ${p => p.theme.space[5]}px;
   padding-bottom: ${p => p.theme.space[5]}px;
@@ -13,8 +13,8 @@ export const Form = styled(FormikForm)`
   padding-right: ${p => p.theme.space[2]}px;
 
   max-width: 100%;
-  width: 420px;
-  height: auto;
+  width: 800px;
+  height: 900px;
 `;
 
 export const FormField = styled.label`
@@ -81,7 +81,7 @@ export const StyledButton = styled.button`
   padding-bottom: ${p => p.theme.space[3]}px;
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
-
+width: 200px;
   border: none;
   outline: none;
 

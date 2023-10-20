@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const CloseBtn = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 8px;
+  right: 8px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[3]}px;
@@ -100,7 +100,7 @@ export const PhotoWrap = styled.div`
   margin: 0 auto;
   padding: 10px;
   max-width: 100%;
-  width: 320px;
+  width: 200px;
   height: 200px;
   border-radius: 50%;
 `;
@@ -108,8 +108,8 @@ export const PhotoWrap = styled.div`
 export const BorderOutside = styled.div`
   padding: 7px;
   margin: 0 auto;
-  width: 170px;
-  height: 170px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   border: none;
   margin-bottom: 10px;
@@ -137,6 +137,7 @@ export const BorderInside = styled.div`
 `;
 export const PhotoThumb = styled.div`
   margin-bottom: 0;
+
   width: 150px;
   height: 150px;
   border-radius: 50%;

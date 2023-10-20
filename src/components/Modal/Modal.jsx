@@ -1,7 +1,6 @@
 import Modal from 'react-modal';
 
 import { MdOutlineClose } from 'react-icons/md';
-import Av from 'assets/avatar.png';
 import {
   BorderInside,
   BorderOutside,
@@ -61,9 +60,13 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
      
         <p style={fontSize}>{data?.fio}</p>
       
-        <p>{'Членський внесок: ' + data?.membershipfee + ' грн'}</p>
-        <p>{'ПАЇ: ' + data?.share + ' грн'}</p>
-        <p>{'Виплати на паї : ' + data?.payshare + ' грн'}</p>
+        <p> {'Членський внесок: '}
+       <span style={{ fontWeight: 'bold', color: 'red' }}>{data?.membershipfee + ' грн'}</span></p>
+       <p> {'ПАЇ: '}
+       <span style={{ fontWeight: 'bold', color: 'red' }}>{data?.share + ' грн'}</span></p>
+       <p> {'Виплати на паї : '}
+       <span style={{ fontWeight: 'bold', color: 'red' }}>{data?.payshare + ' грн'}</span></p>
+     
         <Tooltip label="Call" hasArrow bg="gray.300" color="#000" fontSize="xs">
           <p>
             <a href={'tel:' + data?.phohe}>{data?.phone}</a>
@@ -77,8 +80,9 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <p>{'Регистрация: ' + data?.registrationplase}</p>
         <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
-      <Button onClick={openChangeModal}>
-        <TfiPencil size="16" />
+      <Button onClick={openChangeModal}
+      style={{ position: 'absolute', bottom: '20px', right: '20px' }} >
+        <TfiPencil size="18" />
       </Button>
       <ChangeContactModal
         isOpen={modalIsOpen}

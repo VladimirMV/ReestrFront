@@ -11,7 +11,7 @@ export const SectionWrapper = styled.section`
   // margin-bottom: 5px;
   max-width: 100%;
   width: 100%;
-  background-color: #d7eef1;
+  background-color: #f1f1f1;
   color: ${props => props.theme.colors.black};
   text-shadow: 0 -0.4px 0.4px #ffffff, 0.4px 0.4px 0.4px #00000031;
 `;

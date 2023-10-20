@@ -14,7 +14,8 @@ import {
 import Loader from 'components/Loader/Loader';
 import { List, Info } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-
+import {StyledButton} from '../ChangeContactModal/ChangeContactModal.styled';
+import { IoMdPersonAdd } from 'react-icons/io';
 function ContactList() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -73,6 +74,14 @@ function ContactList() {
               );
             })}
           </ul>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <StyledButton type="submit" width="500px">
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <IoMdPersonAdd size="18" color="#3f47cc" />
+    <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>ADD MEMBER</span>
+  </div>
+</StyledButton>
+</div>
         </List>
       )}
     </>

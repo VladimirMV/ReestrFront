@@ -34,10 +34,37 @@ export const ChangeContactModal = ({
 }) => {
   const [formValues, setFormValues] = useState(data || {});
 console.log("formValues edit=======",formValues);
-  const initialValues = { name: '', number: '' };
+  const initialValues = { fio: '', 
+  phone: '' ,
+  number: '1234567890' ,
+  membershipfee:  '0',
+    share:'0',
+    payshare: '0',
+    email:  '',
+    edrpu:  '',
+    form: data?.form || '',
+    adress:  '',
+    birthday: '',
+    registrationplase:  '',
+    passport:  '',
+    n: '0',
+};
   const savedValues = {
-    name: data?.fio || '',
-    number: data?.phone || '',
+    fio: data?.fio || '',
+    phone: data?.phone || '',
+    number: data?.number || '',
+    membershipfee: data?.membershipfee || '0',
+    share: data?.share || '0',
+    payshare: data?.payshare || '0',
+    email: data?.email || '',
+    edrpu: data?.edrpu || '',
+    form: data?.form || '',
+    adress: data?.adress || '',
+    birthday: data?.birthday || '',
+    registrationplase: data?.registrationplase || '',
+    passport: data?.passport || '',
+    n: data?.n |0| '',
+
   };
 
   const dispatch = useDispatch();
@@ -61,7 +88,7 @@ console.log("formValues edit=======",formValues);
       <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
-        contentLabel="Inline Styles Modal Example"
+        contentLabel="Inline Styles Modal  "
         style={customStylesInsideModal}
       >
         <CloseBtn onClick={onClose}>
@@ -80,30 +107,132 @@ console.log("formValues edit=======",formValues);
                 <FormField>
                   <LabelWrapper>
                     <BsPersonFill />
-                    <LabelSpan>Name</LabelSpan>
+                    <LabelSpan>ФИО</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="name" placeholder="Name" />
+                  <FieldFormik type="text" name="fio" placeholder="Name" />
                   <ErrorMessage name="name" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
                     <BsFillTelephoneFill />
-                    <LabelSpan>Phone Number</LabelSpan>
+                    <LabelSpan>Номер телефона</LabelSpan>
                   </LabelWrapper>
                   <FieldFormik
                     type="tel"
-                    name="number"
+                    name="phone"
                     placeholder="+38-050-936-44-77"
                   />
                   <ErrorMessage name="number" component="span" />
                 </FormField>
-                <StyledButton
+                
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>e-mail</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="email" placeholder="email" />
+                  <ErrorMessage name="email" component="span" />
+                </FormField>
+
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Номер членского билета</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="number" placeholder="number" />
+                  <ErrorMessage name="number" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Членський внесок (грн)</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="membershipfee" placeholder="membershipfee" />
+                  <ErrorMessage name="number" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>ПАЇ (грн)</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="share" placeholder="share" />
+                  <ErrorMessage name="share" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Виплати на паї (грн)</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="payshare" placeholder="payshare" />
+                  <ErrorMessage name="payshare" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>код ЄДРПОУ</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="edrpu" placeholder="edrpu" />
+                  <ErrorMessage name="edrpu" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Форма</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="form" placeholder="form" />
+                  <ErrorMessage name="form" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Адрес</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="adress" placeholder="adress" />
+                  <ErrorMessage name="adress" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Дата рождения</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="birthday" placeholder="birthday" />
+                  <ErrorMessage name="birthday" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Регистрация</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="registrationplase" placeholder="registrationplase" />
+                  <ErrorMessage name="registrationplase" component="span" />
+                </FormField>
+                <FormField>
+                  <LabelWrapper>
+                    <BsPersonFill />
+                    <LabelSpan>Паспорт</LabelSpan>
+                  </LabelWrapper>
+                  <FieldFormik type="text" name="passport" placeholder="passport" />
+                  <ErrorMessage name="passport" component="span" />
+                </FormField>
+
+                {/* <StyledButton
                   type="submit"
                   disabled={!formik.isValid || formik.isSubmitting}
                 >
                   <IoMdPersonAdd size="16" />
-                  Edit contact
+                   Edit contact
+                </StyledButton> */}
+                    <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '30px' }}>
+                     <StyledButton type="submit"
+                      disabled={!formik.isValid || formik.isSubmitting}
+                       width="500px">
+                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                         <IoMdPersonAdd size="18" color="#3f47cc" />
+                         <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>EDIT MEMBER</span>
+                      </div>
                 </StyledButton>
+                </div>
+
               </Form>
             );
           }}

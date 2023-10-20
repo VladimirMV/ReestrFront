@@ -8,7 +8,7 @@ import  {ContactForm}  from 'components/ContactForm/ContactForm';
 import  ContactList  from 'components/ContactList/ContactList';
 import  Filter  from 'components/Filter/Filter';
 import { Section } from 'components/Section/Section';
-import { Title } from 'components/Title/Title';
+import { AddMembers } from 'components/AddMembers/AddMembers';
 import { customStylesFonContacts } from 'styles/fonStyle';
 const defaultTheme = createTheme({
   palette: {
@@ -47,31 +47,33 @@ const Contacts = () => {
           item
           xs={12}
           sm={9}
-          md={9}
+          md={10}
           component={Paper}
           elevation={24}
           square
           sx={{
             height: '100%',
-            background: '#d7eef1',
+            background: '#f1f1f1',
             backdropFilter: 'blur(7.5px)',
           }}
         >
           <Box
             sx={{
-              my: 8,
-              mx: 2,
+              my: 10,
+              mx: 8,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
-            <Grid container spacing={4}>
-              <Section title="Registry">
-                <ContactForm />
-                <Title title="Members" />
+            <Grid container spacing={6}>
+              <Section title="Members">
+                {/* <ContactForm /> */}
+                {/* <Title title="Members" /> */}
+
                 <Filter />
                 <ContactList />
+                {/* <AddMembers /> */}
               </Section>
             </Grid>
           </Box>
