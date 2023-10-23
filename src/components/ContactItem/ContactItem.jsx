@@ -32,14 +32,14 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 // style
 // import { IoPersonRemove } from 'react-icons/io5';
 
-export const ContactItem = ({  fio, phone, id, membershipfee, 
+export const ContactItem = ({  fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
             adress, payshare,email,avatarUrl
 
 }) => {
  
   const [selectedContact, setSelectedContact] = useState(null);
-
+;
   const dispatch = useDispatch();
 
   const onDeleteContact = contactId => {
@@ -52,7 +52,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
  
   
   const setModalData = () => {
-   const selectContact = { fio, phone, id, membershipfee, 
+   const selectContact = { fio, phone, _id, membershipfee, 
     share,n,form , number, edrpu, passport, birthday, registrationplase, 
     adress, payshare,email, avatarUrl };
     setSelectedContact(selectContact );
@@ -74,7 +74,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
     <Container maxWidth="md"  >
      
       <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 0 }}>
-        { <ListItem key={id}> 
+        { <ListItem key={_id}> 
          <Tooltip label="Click" color="#000" fontSize="xs">      
               <ListItemAvatar>
             <ModalPictureWrapper> 
@@ -111,7 +111,7 @@ export const ContactItem = ({  fio, phone, id, membershipfee,
               <IconButton sx={{ pl: 2 }}
                         edge="end"
                 aria-label="delete"
-                onClick={() => onDeleteContact(id)}
+                onClick={() => onDeleteContact(_id)}
               >
               <DeleteIcon />
               

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Formik } from 'formik';
 import 'yup-phone';
 
-// redux
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { schema } from '../../services/schemaYup';
@@ -34,9 +33,8 @@ export const ChangeContactModal = ({
   setModalIsOpen,
 }) => {
   const [formValues, setFormValues] = useState(data || {});
-
-  console.log("datas edit=======",data);
-  const initialValues = { fio: '', 
+console.log("formValues edit=======",formValues);
+  const initialValues = { name: '', 
   phone: '' ,
   number: '1234567890' ,
   membershipfee:  '0',
@@ -44,19 +42,15 @@ export const ChangeContactModal = ({
     payshare: '0',
     email:  '',
     edrpu:  '',
-    form:   '',
+    form: data?.form || '',
     adress:  '',
     birthday: '',
     registrationplase:  '',
     passport:  '',
     n: '0',
 };
-  // const savedValues = {
-  //   name: data?.fio || '',
-  //   number: data?.phone || '',
-  // };
   const savedValues = {
-    fio: data?.fio || '',
+    name: data?.fio || '',
     phone: data?.phone || '',
     number: data?.number || '',
     membershipfee: data?.membershipfee || '0',
@@ -72,15 +66,18 @@ export const ChangeContactModal = ({
     n: data?.n |0| '',
 
   };
-
+console.log("savedValues edit=======",savedValues ,"initialValues =======",initialValues);
   const dispatch = useDispatch();
 
   const closeModal = () => {
     onClose();
     setModalIsOpen(false);
   };
+ 
+    
 
   const onSubmitHandler = (values, { resetForm }) => {
+    console.log(" Кпопка  нажата values edit=======",values);
     const newFormValues = { ...formValues, ...values };
     setFormValues(newFormValues);
     console.log("newFormValues +++++++++++++++++",newFormValues)
@@ -94,7 +91,7 @@ export const ChangeContactModal = ({
       <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
-        contentLabel="Inline Styles Modal Example"
+        contentLabel="Inline Styles Modal  "
         style={customStylesInsideModal}
       >
         <CloseBtn onClick={onClose}>
@@ -105,9 +102,14 @@ export const ChangeContactModal = ({
           onSubmit={onSubmitHandler}
           enableReinitialize
           validationSchema={schema}
+          isValid ={true}
+          isSubmitting ={true}
+          isValidating = {true}
+          
         >
           {formik => {
-             console.log('Formik props', formik);
+            console.log('Formik props', formik);
+           ;
             return (
               <Form autoComplete="off">
                 <FormField>
@@ -115,8 +117,8 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>ФИО</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="fio" placeholder="fio" />
-                  <ErrorMessage name="fio" component="span" />
+                  <FieldFormik type="text" name="name" placeholder="name" />
+                  <ErrorMessage name="name" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
@@ -126,12 +128,12 @@ export const ChangeContactModal = ({
                   <FieldFormik
                     type="tel"
                     name="phone"
-                    placeholder="+38-050-123-45-67"
+                    placeholder="+38-050-936-44-77"
                   />
                   <ErrorMessage name="phone" component="span" />
                 </FormField>
- 
-                <FormField>
+                
+                {/* <FormField>
                   <LabelWrapper>
                     <BsPersonFill />
                     <LabelSpan>e-mail</LabelSpan>
@@ -219,8 +221,9 @@ export const ChangeContactModal = ({
                   </LabelWrapper>
                   <FieldFormik type="text" name="passport" placeholder="passport" />
                   <ErrorMessage name="passport" component="span" />
-                </FormField>
-                {/* <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '30px' }}>
+                </FormField> */}
+
+                    <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '30px' }}>
                      <StyledButton 
                   
                      type="submit"  
@@ -231,18 +234,8 @@ export const ChangeContactModal = ({
                          <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>EDIT MEMBER</span>
                       </div>
                 </StyledButton>
-                </div> */}
-                
-                <StyledButton
-                  type="submit"
-                  disabled={!formik.isValid || formik.isSubmitting}
-                >
-                  {/* <IoMdPersonAdd size="16" /> */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <IoMdPersonAdd size="18" color="#3f47cc" />
-                         <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>EDIT MEMBER</span>
-                         </div> 
-                </StyledButton>
+                </div>
+
               </Form>
             );
           }}

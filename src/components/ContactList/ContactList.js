@@ -1,6 +1,6 @@
 import { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useState } from 'react';
 // redux
 import { fetchContacts } from 'redux/contacts/contacts-operations';
 import {
@@ -16,12 +16,41 @@ import { List, Info } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import {StyledButton} from '../ChangeContactModal/ChangeContactModal.styled';
 import { IoMdPersonAdd } from 'react-icons/io';
+import { ContactModal } from 'components/Modal/Modal';
 function ContactList() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const filter = useSelector(selectFilter);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedContact, setSelectedContact] = useState(null);
+  // console.log("_id======",_id, fio);
+  
+  const  fio = '';
+  const phone = '' ;
+  const number= '' ;
+  const membershipfee=  '0';
+  const  share='0';
+  const  payshare= '0';
+  const  email=  '';
+  const  edrpu=  '';
+  const form= '';
+  const adress= '';
+  const  birthday= '';
+  const  registrationplase= '';
+  const passport=  '';
+  const  n= '0';
+  
+  const  avatarUrl= '0';
+  
 
+ 
+  const setModalData = () => {
+    const selectContact = { fio, phone,   membershipfee, 
+     share,n,form , number, edrpu, passport, birthday, registrationplase, 
+     adress, payshare,email, avatarUrl };
+     setSelectedContact(selectContact );
+   };
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,7 +58,10 @@ function ContactList() {
   }, [dispatch]);
 
   const result = useSelector(selectFilteredContacts);
-
+  const closeModal = () => {
+    setSelectedContact(null);
+  };
+ 
   const getFilteredContacts = data => {
     if (filter.toLowerCase() && !data.length) {
       // alert(`No contacts matching your request`);
@@ -48,14 +80,14 @@ function ContactList() {
       {!error && !isLoading && filteredContacts?.length > 0 && (
         <List>
           <ul>
-            {filteredContacts.map(({ fio, phone, id, membershipfee, 
+            {filteredContacts.map(({ fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
             adress, payshare, email, avatarUrl}) => {
               return (
-                <Fragment key={id}>
+                <Fragment key={_id}>
                   <ContactItem fio={fio} 
                   phone={phone} 
-                  id={id} 
+                  _id={_id} 
                   membershipfee ={membershipfee} 
                   share ={share}                 
                   n ={n}
@@ -74,8 +106,10 @@ function ContactList() {
               );
             })}
           </ul>
+
+
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <StyledButton type="submit" width="500px">
+          <StyledButton onClick={() => setModalData()} width="500px">
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <IoMdPersonAdd size="18" color="#3f47cc" />
     <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>ADD MEMBER</span>
@@ -83,7 +117,13 @@ function ContactList() {
 </StyledButton>
 </div>
         </List>
+        
       )}
+       <ContactModal
+        isOpen={selectedContact !== null}
+        onClose={closeModal}
+        data={selectedContact}
+      />
     </>
   );
 }

@@ -45,11 +45,12 @@ export const deleteContact = createAsyncThunk(
 export const changeContact = createAsyncThunk(
   'contacts/editContact',
   async (data, { rejectWithValue }) => {
+    console.log("data changeContact ========:", data);
     try {
       const { data: result } = await api.editContact(data);
 
-      // alert(`Contact update!`);
-      // console.log(result);
+      alert(`Contact update!`);
+       console.log(result);
       return result;
     } catch ({ response }) {
       return rejectWithValue(` Wrong... Try again `);

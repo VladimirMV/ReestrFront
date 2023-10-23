@@ -8,9 +8,22 @@ export const addContact = contact =>
 export const deleteContact = id => authInstance.delete(`/contacts/${id}`);
 
 export const editContact = contact => {
-  return authInstance.patch(`/contacts/${contact.id}`, {
-    name: contact.name,
-    number: contact.number,
+  return authInstance.put(`/contacts/${contact._id}`, {
+    fio: contact.fio, 
+    phone: contact.phone,
+    number: contact. number,
+    membershipfee:  contact.membershipfee,
+    share:contact.share,
+    payshare: contact.payshare,
+    email:  contact.email,
+    edrpu:  contact.edrpu,
+    form:   contact.form,
+    adress:  contact.adress,
+    birthday: contact. birthday,
+    registrationplase:  contact.registrationplase,
+    passport:  contact.passport,
+    n: contact.n,
+    avatarUrl: contact.avatarUrl,
   });
 };
 // Этот код экспортирует функции, которые выполняют операции CRUD(создание, чтение, обновление, удаление)
