@@ -62,10 +62,9 @@ const Home = () => {
             }}
           >
             <Grid container spacing={2}>
-              <Section title=" Registry">
+              <Section title=" Реестр ДОВІРА.КОМ">
                 <Advertising
-                  text="Registry is an application that allows you to keep a contact book. You can add, edit and delete entries.
-Enjoy using Registry"
+                  text="Добро пожаловать на главную страницу Реестра членов ТОВ «ДОВІРА.КОМ» на нашей платформе! Этот   ресурс предоставляет удобный и надежный способ сохранять и управлять данными о пользователях, а также их финансовыми балансами."
                 />
               </Section>
             </Grid>

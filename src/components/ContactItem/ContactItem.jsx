@@ -138,6 +138,6 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
 ContactItem.propTypes = {
    fio: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
 };
 

@@ -24,8 +24,7 @@ function ContactList() {
   const filter = useSelector(selectFilter);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState(null);
-  // console.log("_id======",_id, fio);
-  
+ 
   const  fio = '';
   const phone = '' ;
   const number= '' ;
@@ -68,6 +67,27 @@ function ContactList() {
     }
     return data;
   };
+  
+  // Function to calculate sums
+function calculateSums(data) {
+  let totalMembershipfee = 0;
+  let totalShare = 0;
+  let totalPayshare = 0;
+
+  for (const record of data) {
+    totalMembershipfee += record.membershipfee;
+    totalShare += record.share;
+    totalPayshare += record.payshare;
+  }
+
+  return { totalMembershipfee, totalShare, totalPayshare };
+}
+
+// Call the function and get the sums
+const sums = calculateSums(contacts);
+console.log("Total membership fee:", sums.totalMembershipfee);
+console.log("Total share:", sums.totalShare);
+console.log("Total payshare:", sums.totalPayshare);
 
   const filteredContacts = getFilteredContacts(result);
   return (
@@ -78,7 +98,10 @@ function ContactList() {
         <Info>Contacts not found</Info>
       )}
       {!error && !isLoading && filteredContacts?.length > 0 && (
+        
         <List>
+        <Info>Всего членских взносов : {sums.totalMembershipfee} грн  паев: {sums.totalShare} грн выплат по паям: {sums.totalPayshare} грн</Info>
+
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
