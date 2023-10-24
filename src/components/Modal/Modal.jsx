@@ -18,6 +18,7 @@ import { Tooltip } from '@chakra-ui/react';
 
 import { TfiPencil } from 'react-icons/tfi';
 import { ChangeContactModal } from 'components/ChangeContactModal/ChangeContactModal';
+import defaultImageUrl from '../../img/nofotobl.png';
 
 Modal.setAppElement('#root');
 
@@ -56,7 +57,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
           <BorderInside >
             <PhotoThumb   >
              
-              <ModalPicture src={data?.avatarUrl} alt="photo" />
+              <ModalPicture src={data?.avatarUrl|| defaultImageUrl} alt="   photooooo" />
               
             </PhotoThumb>
           </BorderInside>

@@ -20,6 +20,7 @@
     "framer-motion": "^10.12.10",
     "i": "^0.3.7",
     "modern-normalize": "^1.1.0",
+    "moment": "^2.29.4",
     "nanoid": "^4.0.2",
     "npm": "^9.7.2",
     "prop-types": "^15.8.1",

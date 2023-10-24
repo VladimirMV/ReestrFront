@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Formik } from 'formik';
 import 'yup-phone';
-
+import moment from 'moment';
 // redux
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
 import { IoMdPersonAdd } from 'react-icons/io';
@@ -88,7 +88,11 @@ export const ChangeContactModal = ({
     resetForm();
     closeModal();
   };
-
+  function handleDateChange(e) {
+    const inputDate = e.target.value;
+    const formattedDate = moment(inputDate, 'DD/MM/YYYY').format('DD/MM/YYYY');
+    e.target.value = formattedDate;
+  }
   return (
     <>
       <Modal
@@ -201,7 +205,12 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>Дата рождения</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="birthday" placeholder="birthday" />
+                  <FieldFormik 
+                  type="text" 
+                  name="birthday" 
+                  placeholder="дд/мм/гггг"
+                  />
+           
                   <ErrorMessage name="birthday" component="span" />
                 </FormField>
                 <FormField>
