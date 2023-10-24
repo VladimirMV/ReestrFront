@@ -32,7 +32,14 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
     setModalIsOpen(false);
     onClose();
   };
-  // console.log("datas edit=======",data);
+  function formatDate(dateString) {
+    if (dateString) {
+      const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+      const date = new Date(dateString);
+      return date.toLocaleDateString('ru-RU', options);
+    }
+    return ''; // Возвращать пустую строку, если дата отсутствует или неверна
+  }
   return (
     <Modal
       isOpen={isOpen}
@@ -76,7 +83,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <p>{'код ЄДРПОУ: ' + data?.edrpu}</p>
         {/* <p>{'Форма: ' + data?.form}</p> */}
         <p>{'Адрес: ' + data?.adress}</p>
-        <p>{'Дата рождения: ' + data?.birthday}</p>
+        <p>{'Дата рождения: ' + formatDate(data?.birthday)}</p>
         <p>{'Регистрация: ' + data?.registrationplase}</p>
         <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
