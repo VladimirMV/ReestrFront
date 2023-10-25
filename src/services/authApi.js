@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 export const authInstance = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  // baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://registry-s9xe.onrender.com/api',
+  
 });
 
 export const setAuthHeader = token => {
@@ -39,14 +41,3 @@ export const userCurrent = async token => {
   return response;
 };
 
-// Данный код экспортирует объект authInstance, который создается из библиотеки axios с
-// базовым URL для отправки запросов для аутентификации пользователей.Также экспортируются
-// несколько функций: setAuthHeader, clearAuthHeader, userSignUp, userLogin, userLogout, userCurrent.
-
-// setAuthHeader и clearAuthHeader позволяют добавить или удалить заголовок авторизации для
-// запросов, отправленных с помощью authInstance.
-
-//   userSignUp, userLogin, userLogout и userCurrent используют методы axios, чтобы выполнить
-// соответствующие запросы в соответствии с API для аутентификации пользователей.
-
-// Функция userCurrent позволяет получить информацию о текущем пользователе, основываясь на переданном ей токене.
