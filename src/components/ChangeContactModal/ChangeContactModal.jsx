@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Formik } from 'formik';
 import 'yup-phone';
-import moment from 'moment';
+// import moment from 'moment';
 // redux
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
 import { IoMdPersonAdd } from 'react-icons/io';
@@ -22,7 +22,7 @@ import { MdOutlineClose } from 'react-icons/md';
 import { CloseBtn } from 'components/Modal/Modal.styled';
 import { useDispatch } from 'react-redux';
 import { changeContact } from 'redux/contacts/contacts-operations';
-
+import defaultImageUrl from '../../img/nofotobl.png';
 import { customStylesInsideModal } from 'styles/modalStyles';
 
 Modal.setAppElement('#root');
@@ -35,7 +35,7 @@ export const ChangeContactModal = ({
 }) => {
   const [formValues, setFormValues] = useState(data || {});
 
-  console.log("datas edit=======",data);
+ 
   const initialValues = { fio: '', 
   phone: '' ,
   number: '1234567890' ,
@@ -50,11 +50,9 @@ export const ChangeContactModal = ({
     registrationplase:  '',
     passport:  '',
     n: '0',
+    avatarUrl:  defaultImageUrl,
 };
-  // const savedValues = {
-  //   name: data?.fio || '',
-  //   number: data?.phone || '',
-  // };
+  
   const savedValues = {
     fio: data?.fio || '',
     phone: data?.phone || '',
@@ -70,6 +68,7 @@ export const ChangeContactModal = ({
     registrationplase: data?.registrationplase || '',
     passport: data?.passport || '',
     n: data?.n |0| '',
+    avatarUrl: data?.avatarUrl|| defaultImageUrl,
 
   };
 
@@ -88,11 +87,11 @@ export const ChangeContactModal = ({
     resetForm();
     closeModal();
   };
-  function handleDateChange(e) {
-    const inputDate = e.target.value;
-    const formattedDate = moment(inputDate, 'DD/MM/YYYY').format('DD/MM/YYYY');
-    e.target.value = formattedDate;
-  }
+  // function handleDateChange(e) {
+  //   const inputDate = e.target.value;
+  //   const formattedDate = moment(inputDate, 'DD/MM/YYYY').format('DD/MM/YYYY');
+  //   e.target.value = formattedDate;
+  // }
   return (
     <>
       <Modal

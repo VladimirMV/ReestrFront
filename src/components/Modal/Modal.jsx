@@ -39,7 +39,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
       const date = new Date(dateString);
       return date.toLocaleDateString('ru-RU', options);
     }
-    return ''; // Возвращать пустую строку, если дата отсутствует или неверна
+    return '';  
   }
   return (
     <Modal
@@ -57,7 +57,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
           <BorderInside >
             <PhotoThumb   >
              
-              <ModalPicture src={data?.avatarUrl|| defaultImageUrl} alt="   photooooo" />
+              <ModalPicture src={data?.avatarUrl|| defaultImageUrl} alt="----photo " />
               
             </PhotoThumb>
           </BorderInside>

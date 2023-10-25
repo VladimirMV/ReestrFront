@@ -5,7 +5,7 @@ export function Loader() {
     <RotatingTriangles
       height="180"
       width="180"
-      colors={['#778d45', ' #566573', '#212121']}
+      colors={['#3f47cc', ' #566573', '#212121']}
       ariaLabel="rotating-triangels-loading"
       radius="12.5"
       wrapperStyle={{
