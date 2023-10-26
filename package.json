@@ -2,7 +2,7 @@
   "name": "ReestrFront",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://reestr-front-c677k30h9-vladimirmv.vercel.app//",
+  "homepage": "https://VladimirMV.github.io/ReestrFront/",
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
