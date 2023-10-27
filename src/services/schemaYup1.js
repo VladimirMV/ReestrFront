@@ -3,7 +3,7 @@ import 'yup-phone';
 
 export const schema = yup.object().shape({
 
-  name: yup.string().required(requiredMessage),
+  name: yup.string().required(),
    
   phone: yup
     .string()
