@@ -74,7 +74,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
   return (
     <Container maxWidth="md"  >
      
-      <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 0 }}>
+      <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 2 }}>
         { <ListItem key={_id}> 
          <Tooltip label="Click" color="#000" fontSize="xs">      
               <ListItemAvatar>
@@ -93,7 +93,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
           <ContactDescr>
            {isSmallScreen ? (
               <>
-                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '300px' }} primary={fio} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '200px' }} primary={fio} />
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={phone} /> */}
               </>
             ) : (
@@ -107,7 +107,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             <WrapperBtns>
             <ListItemSecondaryAction>
             <Tooltip label="Edit" color="#000" fontSize="xs">  
-            <IconButton sx={{   pl: 2 }}
+            <IconButton sx={{   pl: 1 }}
                 edge="end"
                         aria-label="Edit"
                  onClick={() => setModalData()}
@@ -118,7 +118,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             </Tooltip> 
 
             <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <IconButton sx={{ pl: 4 }}
+              <IconButton sx={{ pl: 2 }}
                         edge="end"
                 aria-label="delete"
                 onClick={() => onDeleteContact(_id)}

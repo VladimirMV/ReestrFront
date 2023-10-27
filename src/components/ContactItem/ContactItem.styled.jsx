@@ -148,8 +148,8 @@ export const ContactDescr = styled.div`
   gap: 8px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
-  padding-left: ${p => p.theme.space[2]}px;
-  padding-right: ${p => p.theme.space[4]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[2]}px;
   width: 80%;
   height: auto;
 
