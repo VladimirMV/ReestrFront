@@ -1,14 +1,14 @@
 
-import { StyledButton } from './AddMembers.styled';
-import { IoMdPersonAdd } from 'react-icons/io';
-export const AddMembers = () => {
-  return 
+// import { StyledButton } from './AddMembers.styled';
+// import { IoMdPersonAdd } from 'react-icons/io';
+// export const AddMembers = () => {
+//   return 
   
-  <StyledButton 
+//   <StyledButton 
  
   
->
-  <IoMdPersonAdd size="16" />
-  Add member
-</StyledButton>
-};
+// >
+//   <IoMdPersonAdd size="16" />
+//   Add member
+// </StyledButton>
+// };
