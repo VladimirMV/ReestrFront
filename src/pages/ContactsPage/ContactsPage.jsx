@@ -46,8 +46,8 @@ const Contacts = () => {
         <Grid
           item
           xs={12}
-          sm={9}
-          md={10}
+          sm={12}
+          md={12}
           component={Paper}
           elevation={24}
           square

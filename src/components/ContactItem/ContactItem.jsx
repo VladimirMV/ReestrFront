@@ -11,6 +11,7 @@ import {
   Avatar,
   ListItemSecondaryAction,
   IconButton,
+  useMediaQuery,
 } from '@mui/material';
 import {
   ContactDescr,
@@ -57,6 +58,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
     adress, payshare,email, avatarUrl };
     setSelectedContact(selectContact );
   };
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
   function stringAvatar( fio) {
      
@@ -90,10 +92,19 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
                       </ListItemAvatar>
           </Tooltip> 
           <ContactDescr>
-          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "150px"}} primary={ fio} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx", width: "150px"}} primary={phone} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={membershipfee} />
-          <ListItemText sx={{  pr:2, fontSize: "2sx"}} primary={share} />
+          {isSmallScreen ? (
+              <>
+                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={fio} />
+                {/* <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={phone} /> */}
+              </>
+            ) : (
+              <>
+                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={fio} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={phone} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={membershipfee} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={share} />
+              </>
+            )}
             <WrapperBtns>
             <ListItemSecondaryAction>
             <Tooltip label="Edit" color="#000" fontSize="xs">  
