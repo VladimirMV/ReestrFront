@@ -93,7 +93,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
           <ContactDescr>
            {isSmallScreen ? (
               <>
-                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '200px' }} primary={fio} />
+                <ListItemText sx={{ pr: 4, fontSize: '2sx', width: '200px' }} primary={fio} />
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={phone} /> */}
               </>
             ) : (
@@ -107,7 +107,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             <WrapperBtns>
             <ListItemSecondaryAction>
             <Tooltip label="Edit" color="#000" fontSize="xs">  
-            <IconButton sx={{   pl: 1 }}
+            <IconButton sx={{   pl: 0 }}
                 edge="end"
                         aria-label="Edit"
                  onClick={() => setModalData()}
@@ -118,7 +118,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             </Tooltip> 
 
             <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <IconButton sx={{ pl: 2 }}
+              <IconButton sx={{ pl: 1 }}
                         edge="end"
                 aria-label="delete"
                 onClick={() => onDeleteContact(_id)}

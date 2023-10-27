@@ -85,9 +85,9 @@ function calculateSums(data) {
 
 // Call the function and get the sums
 const sums = calculateSums(contacts);
-console.log("Total membership fee:", sums.totalMembershipfee);
-console.log("Total share:", sums.totalShare);
-console.log("Total payshare:", sums.totalPayshare);
+// console.log("Total membership fee:", sums.totalMembershipfee);
+// console.log("Total share:", sums.totalShare);
+// console.log("Total payshare:", sums.totalPayshare);
 
   const filteredContacts = getFilteredContacts(result);
   return (
@@ -100,7 +100,9 @@ console.log("Total payshare:", sums.totalPayshare);
       {!error && !isLoading && filteredContacts?.length > 0 && (
         
         <List>
-        <Info>Всего членских взносов : {sums.totalMembershipfee} грн  паев: {sums.totalShare} грн выплат по паям: {sums.totalPayshare} грн</Info>
+        <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
+        <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
+        Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
 
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 

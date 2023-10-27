@@ -13,14 +13,14 @@ export const List = styled.ul`
 `;
 
 export const Info = styled.div`
-  padding-top: ${p => p.theme.space[4]}px;
-  padding-bottom: ${p => p.theme.space[3]}px;
+  padding-top: ${p => p.theme.space[1]}px;
+  padding-bottom: ${p => p.theme.space[1]}px;
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;
   text-align: center;
   font-size: ${p => p.theme.fontSizes.m};
   color: ${p => p.theme.colors.primary};
-  font-weight: ${p => p.theme.fontWeights.bold};
+  /* font-weight: ${p => p.theme.fontWeights.bold}; */
 `;
 
 export const Image = styled.img`
