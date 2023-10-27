@@ -61,7 +61,15 @@ const ContactItem = ({
     };
     setSelectedContact(selectContact);
   };
-
+  function stringAvatar(name) {
+    //console.log(name);
+    return {
+      sx: {
+        bgcolor: getRandomHexColor(),
+      },
+      children: abbrevName(name),
+    };
+  }
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
   return (
