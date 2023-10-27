@@ -60,7 +60,7 @@ const Contacts = () => {
           <Box
             sx={{
               my: 10,
-              mx: 8,
+              mx: 2,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -68,17 +68,14 @@ const Contacts = () => {
           >
             <Grid container spacing={6}>
               <Section title="Members">
-                {/* <ContactForm /> */}
-                {/* <Title title="Members" /> */}
-
+               
                 <Filter />
                 <ContactList />
-                {/* <AddMembers /> */}
               </Section>
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={false} sm={8} md={9} />
+        <Grid item xs={false} sm={12} md={12} />
       </Grid>
     </ThemeProvider>
   );

@@ -33,6 +33,7 @@ export const WrapperBtns = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  margin-left: 10px;
 `;
 export const WhatsappShareButton = styled(Button)`
   display: flex;
@@ -148,11 +149,11 @@ export const ContactDescr = styled.div`
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
-  padding-right: ${p => p.theme.space[2]}px;
+  padding-right: ${p => p.theme.space[4]}px;
   width: 80%;
   height: auto;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 16px;
   }
