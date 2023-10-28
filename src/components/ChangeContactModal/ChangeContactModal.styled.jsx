@@ -12,7 +12,7 @@ export const Form = styled(FormikForm)`
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
  margin-top:  ${props => props.theme.space[5]}px;
- margin-top:  450px;
+ margin-top:  460px;
   max-width: 100%;
   width: 800px;
   height: auto;
