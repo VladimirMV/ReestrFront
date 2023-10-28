@@ -35,7 +35,7 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 
 export const ContactItem = ({  fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
-            adress, payshare,email,avatarUrl
+            adress, payshare,email, avatarUrl
 
 }) => {
  
@@ -58,6 +58,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
     adress, payshare,email, avatarUrl };
     setSelectedContact(selectContact );
   };
+  console.log("avatarUrl", avatarUrl);
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
   function stringAvatar( fio) {
      
@@ -118,7 +119,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             </Tooltip> 
 
             <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <IconButton sx={{ pl: 1 }}
+              <IconButton sx={{ pl: 2 }}
                         edge="end"
                 aria-label="delete"
                 onClick={() => onDeleteContact(_id)}

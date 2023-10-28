@@ -34,7 +34,7 @@ export const logInUser = createAsyncThunk(
         position: 'bottom-right',
         autoClose: 1500,
       });
-      console.log('login:======================', result);
+      // console.log('login:======================', result);
       return result;
     } catch (error) {
       return rejectWithValue(`Ooops! Wrong... Try again ...`);

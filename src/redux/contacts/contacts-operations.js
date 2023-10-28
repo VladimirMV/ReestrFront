@@ -33,7 +33,7 @@ export const deleteContact = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       await api.deleteContact(id);
-      // alert(`Contact delete`);
+       alert(`Contact delete`);
 
       return id;
     } catch ({ response }) {
@@ -45,7 +45,7 @@ export const deleteContact = createAsyncThunk(
 export const changeContact = createAsyncThunk(
   'contacts/editContact',
   async (data, { rejectWithValue }) => {
-    console.log("data changeContact ========:", data);
+    // console.log("data changeContact ========:", data);
     try {
       const { data: result } = await api.editContact(data);
 

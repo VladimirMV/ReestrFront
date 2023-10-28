@@ -15,7 +15,7 @@ export const List = styled.ul`
 export const Info = styled.div`
   padding-top: ${p => p.theme.space[1]}px;
   padding-bottom: ${p => p.theme.space[1]}px;
-  padding-left: ${p => p.theme.space[4]}px;
+  padding-left: ${p => p.theme.space[6]}px;
   padding-right: ${p => p.theme.space[4]}px;
   text-align: center;
   font-size: ${p => p.theme.fontSizes.m};
