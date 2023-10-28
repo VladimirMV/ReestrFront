@@ -11,10 +11,11 @@ export const Form = styled(FormikForm)`
   padding-bottom: ${p => p.theme.space[5]}px;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
-
+ margin-top:  ${props => props.theme.space[5]}px;
+ margin-top:  450px;
   max-width: 100%;
   width: 800px;
-  height: 900px;
+  height: auto;
 `;
 
 export const FormField = styled.label`

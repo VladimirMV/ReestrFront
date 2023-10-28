@@ -82,7 +82,7 @@ export const ChangeContactModal = ({
   const onSubmitHandler = (values, { resetForm }) => {
     const newFormValues = { ...formValues, ...values };
     setFormValues(newFormValues);
-    console.log("newFormValues +++++++++++++++++",newFormValues)
+    // console.log("newFormValues +++++++++++++++++",newFormValues)
     dispatch(changeContact(newFormValues));
     resetForm();
     closeModal();
@@ -110,7 +110,7 @@ export const ChangeContactModal = ({
           validationSchema={schema}
         >
           {formik => {
-             console.log('Formik props', formik);
+            //  console.log('Formik props', formik);
             return (
               <Form autoComplete="off">
                 <FormField>
@@ -121,6 +121,7 @@ export const ChangeContactModal = ({
                   <FieldFormik type="text" name="fio" placeholder="fio" />
                   <ErrorMessage name="fio" component="span" />
                 </FormField>
+                
                 <FormField>
                   <LabelWrapper>
                     <BsFillTelephoneFill />
