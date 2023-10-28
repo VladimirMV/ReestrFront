@@ -14,7 +14,7 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     maxWidth: '100%',
     width: '600px',
-    height: 'auto',
+    height: '850px',
     padding: '40px',
     boxShadow: '2px 2px 2px #0f0f0f',
     border: 'none',

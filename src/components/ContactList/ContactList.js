@@ -85,9 +85,7 @@ function calculateSums(data) {
 
 // Call the function and get the sums
 const sums = calculateSums(contacts);
-// console.log("Total membership fee:", sums.totalMembershipfee);
-// console.log("Total share:", sums.totalShare);
-// console.log("Total payshare:", sums.totalPayshare);
+
 
   const filteredContacts = getFilteredContacts(result);
   return (
