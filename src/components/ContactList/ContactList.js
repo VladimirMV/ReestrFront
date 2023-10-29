@@ -103,9 +103,9 @@ const listTitle = ( <pre>{`ФИО             Телефон          Чл/вз�
         <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
         <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
         Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
-        {!isSmallScreen && ( // Проверка на isSmallScreen равное false
+        {!isSmallScreen && ( 
         <Info>
-          <span style={{ fontWeight: 'bold', margin: '0', padding: '0' }}>{listTitle}</span>
+          <span style={{  margin: '0', padding: '0' }}>{listTitle}</span>
         </Info>
       )}
           <ul>
