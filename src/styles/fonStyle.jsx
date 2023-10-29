@@ -1,9 +1,11 @@
+// import { HomeFon } from '../img/HomeFon.jpg';
+
 export const customStylesFonContacts = {
-    backgroundImage: `url("https://catherineasquithgallery.com/uploads/posts/2023-01/1674309202_catherineasquithgallery-com-p-vk-serii-fon-foto-159.jpg")`
+    backgroundImage: `url("https://catherineasquithgallery.com/serye-fony/13264-fon-sajta-seryj-81-foto.html")`
 }
 
 export const customStylesFonHome = {
-    backgroundImage: `url("https://catherineasquithgallery.com/serye-fony/13264-fon-sajta-seryj-81-foto.html")`
+    backgroundImage: `url("https://res.cloudinary.com/dzbll3bb6/image/upload/v1698576690/HomeFone1_brpk0o.jpg")`
 }
 
 export const customStylesFonLogin = {

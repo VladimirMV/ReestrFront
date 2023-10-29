@@ -6,4 +6,5 @@ export const Text = styled.div`
   white-space: wrap;
   overflow: hidden;
   border-right: 0.15em solid transparent;
+  padding: 15px;
 `;
