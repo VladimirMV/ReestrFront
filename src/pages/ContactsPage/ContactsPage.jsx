@@ -13,7 +13,7 @@ import { customStylesFonContacts } from 'styles/fonStyle';
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#d7eef1',
+      main: '#cff9ff',
     },
     secondary: {
       main: '#d4bff9',
@@ -31,6 +31,7 @@ const Contacts = () => {
         component="main"
         style={customStylesFonContacts }
         sx={{
+          // height: '100vh',
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'
@@ -66,7 +67,7 @@ const Contacts = () => {
               alignItems: 'center',
             }}
           >
-            <Grid container spacing={6}>
+            <Grid container spacing={2}>
               <Section title="Members">
                
                 <Filter />
