@@ -23,9 +23,9 @@ function ContactList() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const filter = useSelector(selectFilter);
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
   const [selectedContact, setSelectedContact] = useState(null);
- 
+
   const  fio = '';
   const phone = '' ;
   const number= '' ;
@@ -52,7 +52,7 @@ function ContactList() {
      setSelectedContact(selectContact );
    };
   const dispatch = useDispatch();
-  const isSmallScreen = useMediaQuery('(max-width: 768px)');
+ 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -103,8 +103,11 @@ const listTitle = ( <pre>{`ФИО             Телефон          Чл/вз�
         <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
         <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
         Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
-        {!isSmallScreen ( 
-        <Info><span style={{ fontWeight: 'bold',  margin:'0',padding: '0' }}>{listTitle}</span></Info>)}
+        {!isSmallScreen && ( // Проверка на isSmallScreen равное false
+        <Info>
+          <span style={{ fontWeight: 'bold', margin: '0', padding: '0' }}>{listTitle}</span>
+        </Info>
+      )}
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
@@ -155,3 +158,5 @@ const listTitle = ( <pre>{`ФИО             Телефон          Чл/вз�
 }
 
 export default ContactList;
+
+         
