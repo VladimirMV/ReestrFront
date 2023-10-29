@@ -12,5 +12,5 @@ export const customStylesFonLogin = {
     backgroundImage: `url("https://res.cloudinary.com/dzbll3bb6/image/upload/v1698576690/HomeFone1_brpk0o.jpg")`
 }
  export const customStylesFonRegistration = {
-    backgroundImage: `url("https://phonoteka.org/uploads/posts/2022-02/thumbs/1645103314_44-phonoteka-org-p-fon-zelenii-gradient-nezhnii-47.jpg")`
+    backgroundImage: `url("https://res.cloudinary.com/dzbll3bb6/image/upload/v1698576690/HomeFone1_brpk0o.jpg")`
  }

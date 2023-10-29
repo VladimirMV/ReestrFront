@@ -10,6 +10,7 @@ import {
   selectFilteredContacts,
   selectFilter,
 } from 'redux/selectors';
+import { useMediaQuery} from '@mui/material';
 
 import Loader from 'components/Loader/Loader';
 import { List, Info } from './ContactList.styled';
@@ -51,7 +52,7 @@ function ContactList() {
      setSelectedContact(selectContact );
    };
   const dispatch = useDispatch();
-
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -85,7 +86,8 @@ function calculateSums(data) {
 
 // Call the function and get the sums
 const sums = calculateSums(contacts);
-
+const listTitle = ( <pre>{`ФИО             Телефон          Чл/взнос     Паи`}</pre>
+);
 
   const filteredContacts = getFilteredContacts(result);
   return (
@@ -101,7 +103,8 @@ const sums = calculateSums(contacts);
         <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
         <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
         Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
-
+        {!isSmallScreen ( 
+        <Info><span style={{ fontWeight: 'bold',  margin:'0',padding: '0' }}>{listTitle}</span></Info>)}
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
