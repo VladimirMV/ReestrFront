@@ -13,8 +13,8 @@ export const customStyles = {
     maxHeight: '80vh', // Добавлен скролл - максимальная высота 80% от высоты экрана
     overflowY: 'auto', // Добавлен скролл при необходимости
     marginRight: '-50%',
-    marginTop: '20px',
-    marginBottom: '20px',
+    marginTop: '10px',
+    marginBottom: '10px',
     transform: 'translate(-50%, -50%)',
     maxWidth: '100%',
     width: '600px',
@@ -49,7 +49,7 @@ export const customStylesInsideModal = {
     gap: '8px',
     maxWidth: '100%',
     width: '600px',
-    height: '900px',
+    height: 'auto',
     boxShadow: '2px 2px 2px #0f0f0f',
     border: 'none',
     borderRadius: '12px',

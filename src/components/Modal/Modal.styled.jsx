@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const CloseBtn = styled.button`
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right:12px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[3]}px;
@@ -52,7 +52,7 @@ export const PictureDescr = styled.div`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding-top: ${p => p.theme.space[2]}px;
+  padding-top: ${p => p.theme.space[1]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
@@ -65,9 +65,9 @@ export const PictureDescr = styled.div`
 export const ButtoneDescr = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items: ; */
+  align-items:center ;
   justify-content: space-between;
-  /* gap: 8px; */
+  gap: 8px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
