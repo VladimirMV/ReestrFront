@@ -10,11 +10,11 @@ export const customStyles = {
     zIndex: '1200',
     right: 'auto',
     bottom: 'auto',
-    maxHeight: '80vh', // Добавлен скролл - максимальная высота 80% от высоты экрана
+    maxHeight: '99vh', // Добавлен скролл - максимальная высота 80% от высоты экрана
     overflowY: 'auto', // Добавлен скролл при необходимости
     marginRight: '-50%',
-    marginTop: '10px',
-    marginBottom: '10px',
+    // marginTop: '10px',
+    // marginBottom: '10px',
     transform: 'translate(-50%, -50%)',
     maxWidth: '100%',
     width: '600px',
