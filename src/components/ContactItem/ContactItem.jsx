@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types'
 import { Tooltip } from '@chakra-ui/react';
 import {
@@ -10,7 +10,6 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemSecondaryAction,
-  IconButton,
   useMediaQuery,
 } from '@mui/material';
 import {
@@ -18,8 +17,7 @@ import {
   ModalPictureWrapper,
   WrapperBtns,
 } from './ContactItem.styled';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+
 // functions
 import { getRandomHexColor } from 'utils/getRandomHexColor';
 import { abbrevName } from 'utils/abbrevName';
@@ -27,7 +25,7 @@ import { abbrevName } from 'utils/abbrevName';
 import { ContactModal } from 'components/Modal/Modal';
 
 // redux
-import { deleteContact } from 'redux/contacts/contacts-operations';
+// import { deleteContact } from 'redux/contacts/contacts-operations';
  
 
 // style
@@ -41,11 +39,11 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
  
   const [selectedContact, setSelectedContact] = useState(null);
 ;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const onDeleteContact = contactId => {
-    dispatch(deleteContact(contactId));
-  };
+  // const onDeleteContact = contactId => {
+  //   dispatch(deleteContact(contactId));
+  // };
 
   const closeModal = () => {
     setSelectedContact(null);
@@ -100,34 +98,15 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             ) : (
               <>
                 <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={fio} />
-                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={phone} />
                 <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={share} />
                 <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={membershipfee} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={payshare} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={phone} />
               </>
             )}
             <WrapperBtns>
             <ListItemSecondaryAction>
-            <Tooltip label="Edit" color="#000" fontSize="xs">  
-            <IconButton sx={{   pl: 0 }}
-                edge="end"
-                        aria-label="Edit"
-                 onClick={() => setModalData()}
-            
-              >
-                <EditIcon />
-              </IconButton>
-            </Tooltip> 
-
-            <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <IconButton sx={{ pl: 2 }}
-                        edge="end"
-                aria-label="delete"
-                onClick={() => onDeleteContact(_id)}
-              >
-              <DeleteIcon />
-              
-              </IconButton>
-               </Tooltip> 
+           
          
               </ListItemSecondaryAction>
               </WrapperBtns>

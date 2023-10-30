@@ -13,7 +13,7 @@ import {
 import { useMediaQuery} from '@mui/material';
 
 import Loader from 'components/Loader/Loader';
-import { List, Info } from './ContactList.styled';
+import { List, Info,InfoTable } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import {StyledButton} from '../ChangeContactModal/ChangeContactModal.styled';
 import { IoMdPersonAdd } from 'react-icons/io';
@@ -86,7 +86,7 @@ function calculateSums(data) {
 
 // Call the function and get the sums
 const sums = calculateSums(contacts);
-const listTitle = ( <pre>{`ФИО             Телефон          Паи      Чл/взнос`}</pre>
+const listTitle = ( <pre>{`ФИО              Паи  Чл/взнос  Выплаты        Телефон`}</pre>
 );
 
   const filteredContacts = getFilteredContacts(result);
@@ -104,9 +104,9 @@ const listTitle = ( <pre>{`ФИО             Телефон          Паи    
         <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
         Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
         {!isSmallScreen && ( 
-        <Info>
+        <InfoTable>
           <span style={{  margin: '0', padding: '0' }}>{listTitle}</span>
-        </Info>
+        </InfoTable>
       )}
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 

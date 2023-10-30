@@ -22,6 +22,17 @@ export const Info = styled.div`
   color: ${p => p.theme.colors.primary};
   /* font-weight: ${p => p.theme.fontWeights.bold}; */
 `;
+export const InfoTable = styled.div`
+  padding-top: ${p => p.theme.space[1]}px;
+  padding-bottom: ${p => p.theme.space[1]}px;
+  padding-left: ${p => p.theme.space[2]}px;
+  padding-right: ${p => p.theme.space[1]}px;
+  margin-left: 300px;
+  /* text-align: center; */
+  font-size: ${p => p.theme.fontSizes.m};
+  color: ${p => p.theme.colors.primary};
+  /* font-weight: ${p => p.theme.fontWeights.bold}; */
+`;
 
 export const Image = styled.img`
   width: 100%;

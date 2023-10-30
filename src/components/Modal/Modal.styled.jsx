@@ -56,6 +56,7 @@ export const PictureDescr = styled.div`
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
+  margin-bottom: 40px;
   width: 100%;
   height: auto;
 `;
