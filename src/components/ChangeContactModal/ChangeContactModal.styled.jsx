@@ -83,6 +83,7 @@ export const StyledButton = styled.button`
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
 width: 200px;
+margin-bottom: 24px;
   border: none;
   outline: none;
 

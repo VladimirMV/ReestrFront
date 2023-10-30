@@ -65,8 +65,8 @@ export const ButtoneDescr = styled.div`
   flex-direction: row;
   align-items:center ;
   justify-content: space-between;
-  gap: 8px;
-  padding-top: ${p => p.theme.space[2]}px;
+  gap: 10px;
+  padding-top: ${p => p.theme.space[3]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;

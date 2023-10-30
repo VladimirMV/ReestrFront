@@ -40,6 +40,8 @@ export const customStylesInsideModal = {
     zIndex: '1201',
     right: 'auto',
     bottom: 'auto',
+    maxHeight: '99vh', // Добавлен скролл - максимальная высота 80% от высоты экрана
+    overflowY: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     display: 'flex',
@@ -49,7 +51,7 @@ export const customStylesInsideModal = {
     gap: '8px',
     maxWidth: '100%',
     width: '600px',
-    height: 'auto',
+    height: '930',
     boxShadow: '2px 2px 2px #0f0f0f',
     border: 'none',
     borderRadius: '12px',

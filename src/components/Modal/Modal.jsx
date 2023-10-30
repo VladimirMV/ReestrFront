@@ -16,7 +16,8 @@ import { customStyles } from 'styles/modalStyles';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Tooltip } from '@chakra-ui/react';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import DeleteIcon from '@mui/icons-material/Delete';
+import { IoPersonRemove } from 'react-icons/io5';
 import { TfiPencil } from 'react-icons/tfi';
 import { ChangeContactModal } from 'components/ChangeContactModal/ChangeContactModal';
 import defaultImageUrl from '../../img/nofotobl.png';
@@ -38,7 +39,9 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
   const dispatch = useDispatch();
 
   const onDeleteContact = contactId => {
-    dispatch(deleteContact(contactId));
+    if (window.confirm('Are you sure you want to delete the contact?')) {
+     
+    dispatch(deleteContact(contactId));}
   };
 
   function formatDate(dateString) {
@@ -97,22 +100,23 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
       <ButtoneDescr>
+      <Tooltip label="Delete" color="#000" fontSize="xs">  
+              <Button 
+                aria-label="delete"
+                onClick={() => onDeleteContact(data?._id)}
+                // style={{ position: 'absolute', bottom: '50px', left: '40px' }}
+              >
+              <IoPersonRemove size="18" />
+              
+              </Button>
+               </Tooltip> 
       <Button onClick={openChangeModal}
       // style={{ position: 'absolute', bottom: '50px', right: '40px' }} 
       >
         <TfiPencil size="18" />
       </Button>
-      <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <Button sx={{ pl: 2 }}
-                        edge="end"
-                aria-label="delete"
-                onClick={() => onDeleteContact(data?._id)}
-                // style={{ position: 'absolute', bottom: '50px', left: '40px' }}
-              >
-              <DeleteIcon size="18"/>
-              
-              </Button>
-               </Tooltip> 
+
+      
       </ButtoneDescr>
 
       <ChangeContactModal

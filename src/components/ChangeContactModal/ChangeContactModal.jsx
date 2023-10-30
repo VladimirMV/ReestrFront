@@ -229,18 +229,6 @@ export const ChangeContactModal = ({
                   <FieldFormik type="text" name="passport" placeholder="passport" />
                   <ErrorMessage name="passport" component="span" />
                 </FormField>
-                {/* <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '30px' }}>
-                     <StyledButton 
-                  
-                     type="submit"  
-                     disabled={formik.isValid || !formik.isSubmitting}
-                       width="500px">
-                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                         <IoMdPersonAdd size="18" color="#3f47cc" />
-                         <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>EDIT MEMBER</span>
-                      </div>
-                </StyledButton>
-                </div> */}
                 
                 <StyledButton
                   type="submit"
