@@ -10,13 +10,15 @@ export const customStyles = {
     zIndex: '1200',
     right: 'auto',
     bottom: 'auto',
+    maxHeight: '80vh', // Добавлен скролл - максимальная высота 80% от высоты экрана
+    overflowY: 'auto', // Добавлен скролл при необходимости
     marginRight: '-50%',
     marginTop: '20px',
     marginBottom: '20px',
     transform: 'translate(-50%, -50%)',
     maxWidth: '100%',
     width: '600px',
-    height: '820px',
+    height: '900px',
     padding: '10px 20px 10px 20px',
     boxShadow: '2px 2px 2px #0f0f0f',
     border: 'none',

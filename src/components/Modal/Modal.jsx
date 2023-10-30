@@ -10,6 +10,7 @@ import {
   PhotoThumb,
   PhotoWrap,
   PictureDescr,
+  ButtoneDescr,
 } from './Modal.styled';
 import { customStyles } from 'styles/modalStyles';
 import { useState } from 'react';
@@ -95,10 +96,24 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <p>{'Регистрация: ' + data?.registrationplase}</p>
         <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
+      <ButtoneDescr>
       <Button onClick={openChangeModal}
-      style={{ position: 'absolute', bottom: '50px', right: '40px' }} >
+      // style={{ position: 'absolute', bottom: '50px', right: '40px' }} 
+      >
         <TfiPencil size="18" />
       </Button>
+      <Tooltip label="Delete" color="#000" fontSize="xs">  
+              <Button sx={{ pl: 2 }}
+                        edge="end"
+                aria-label="delete"
+                onClick={() => onDeleteContact(data?._id)}
+                // style={{ position: 'absolute', bottom: '50px', left: '40px' }}
+              >
+              <DeleteIcon size="18"/>
+              
+              </Button>
+               </Tooltip> 
+      </ButtoneDescr>
 
       <ChangeContactModal
         isOpen={modalIsOpen}
@@ -106,18 +121,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         data={data}
         setModalIsOpen={setModalIsOpen}
       />
-            <Tooltip label="Delete" color="#000" fontSize="xs">  
-              <Button sx={{ pl: 2 }}
-                        edge="end"
-                aria-label="delete"
-                onClick={() => onDeleteContact(data?._id)}
-                style={{ position: 'absolute', bottom: '50px', left: '40px' }}
-              >
-              <DeleteIcon size="18"/>
-              
-              </Button>
-               </Tooltip> 
-
+           
 
     </Modal>
   );

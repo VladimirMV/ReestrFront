@@ -56,11 +56,27 @@ export const PictureDescr = styled.div`
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;
-  margin-bottom: 40px;
+  /* margin-top: 30px;
+  margin-bottom: 60px; */
   width: 100%;
   height: auto;
 `;
 
+export const ButtoneDescr = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* align-items: ; */
+  justify-content: space-between;
+  /* gap: 8px; */
+  padding-top: ${p => p.theme.space[2]}px;
+  padding-bottom: ${p => p.theme.space[2]}px;
+  padding-left: ${p => p.theme.space[2]}px;
+  padding-right: ${p => p.theme.space[2]}px;
+  /* margin-top: 30px;
+  margin-bottom: 60px; */
+  width: 100%;
+  height: auto;
+`;
 export const Button = styled.button`
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
