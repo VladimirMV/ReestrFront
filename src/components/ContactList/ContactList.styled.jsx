@@ -6,8 +6,8 @@ export const List = styled.ul`
   gap: 5px;
   padding-top: ${p => p.theme.space[1]}px;
   padding-bottom: ${p => p.theme.space[1]}px;
-  padding-left: ${p => p.theme.space[2]}px;
-  padding-right: ${p => p.theme.space[2]}px;
+  padding-left: ${p => p.theme.space[0]}px;
+  padding-right: ${p => p.theme.space[0]}px;
   max-width: 100%;
   width: 100%;
 `;

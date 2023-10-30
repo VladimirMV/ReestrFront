@@ -144,13 +144,13 @@ export const ContactDescr = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[1]}px;
-  padding-right: ${p => p.theme.space[2]}px;
-  width: 80%;
+  padding-right: ${p => p.theme.space[1]}px;
+  width: 100%;
   height: auto;
 
   @media screen and (min-width: 768px) {

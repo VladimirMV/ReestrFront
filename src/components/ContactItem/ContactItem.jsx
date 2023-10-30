@@ -92,7 +92,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
           <ContactDescr>
            {isSmallScreen ? (
               <>
-                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '220px' }} primary={fio} />
+                <ListItemText sx={{ pr: 6, fontSize: 'sx', width: '210px' }} primary={fio} />
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={phone} /> */}
               </>
             ) : (
