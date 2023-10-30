@@ -86,7 +86,7 @@ function calculateSums(data) {
 
 // Call the function and get the sums
 const sums = calculateSums(contacts);
-const listTitle = ( <pre>{`ФИО              Паи  Чл/взнос  Выплаты        Телефон`}</pre>
+const listTitle = ( <pre>{`ФИО              Паи  Чл/взнос  Выплаты        Телефон `}</pre>
 );
 
   const filteredContacts = getFilteredContacts(result);
