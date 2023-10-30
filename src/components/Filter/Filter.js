@@ -13,7 +13,7 @@ function Filter() {
   };
   return (
     <label className={s.label}>
-      Find membes by name
+      Поиск по имени
       <input
         className={s.input}
         type="text"
