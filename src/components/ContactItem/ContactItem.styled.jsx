@@ -148,7 +148,7 @@ export const ContactDescr = styled.div`
   gap: 8px;
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
-  padding-left: ${p => p.theme.space[4]}px;
+  padding-left: ${p => p.theme.space[1]}px;
   padding-right: ${p => p.theme.space[2]}px;
   width: 80%;
   height: auto;
@@ -156,5 +156,6 @@ export const ContactDescr = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 16px;
+    padding-left: ${p => p.theme.space[4]}px;
   }
 `;

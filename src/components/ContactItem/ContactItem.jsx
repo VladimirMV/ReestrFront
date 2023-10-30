@@ -73,7 +73,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
   return (
     <Container maxWidth="md"  >
      
-      <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 2 }}>
+      <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 0 }}>
         { <ListItem key={_id}> 
          <Tooltip label="Click" color="#000" fontSize="xs">      
               <ListItemAvatar>
@@ -92,7 +92,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
           <ContactDescr>
            {isSmallScreen ? (
               <>
-                <ListItemText sx={{ pr: 4, fontSize: '2sx', width: '200px' }} primary={fio} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '220px' }} primary={fio} />
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={phone} /> */}
               </>
             ) : (
