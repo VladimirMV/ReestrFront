@@ -86,21 +86,4 @@ export const getCurrentUser = createAsyncThunk(
   }
 );
 
-// This code is a Redux toolkit code for handling authentication(login, sign up, logout, and getting the current user information).
-//  The code uses createAsyncThunk from Redux toolkit to create
-//   asynchronous thunk actions for each authentication operation.
 
-//   First, the code imports some necessary libraries(Redux toolkit and react - toastify)
-// and API functions for authentication from another module.
-
-//   Then, the code creates four async thunks(using createAsyncThunk), each for registering
-//  a user(registerUser), logging in a user(logInUser), logging out a user(logOutUser),
-//   and getting the current user information(getCurrentUser).
-
-// For each async thunk, there is an async callback function that makes an API call and returns
-// the result upon successful completion.In case of an error, it returns the rejection
-// value(via the rejectWithValue function).
-
-//   Moreover, this code also provides a condition object to check whether there is a token
-//   in the state before calling the API for getting the current user.Finally, each async thunk
-//     also shows a toast message indicating what action was performed(e.g., "Successfully registered!").

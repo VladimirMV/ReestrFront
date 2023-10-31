@@ -39,7 +39,9 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
   const dispatch = useDispatch();
 
   const onDeleteContact = contactId => {
-    if (window.confirm('Are you sure you want to delete the contact?')) {
+    const fio = data?.fio || '';
+  const confirmationMessage = `Вы уверены, что хотите удалить "${fio}"?`;
+    if (window.confirm(confirmationMessage)) {
      
     dispatch(deleteContact(contactId));
     window.location.reload();}

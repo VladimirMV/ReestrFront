@@ -49,7 +49,7 @@ export const changeContact = createAsyncThunk(
     try {
       const { data: result } = await api.editContact(data);
 
-      alert(`Contact update!`);
+      alert(`Запись изменена!`);
        console.log(result);
       return result;
     } catch ({ response }) {
