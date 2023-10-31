@@ -98,8 +98,8 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
             ) : (
               <>
                 <ListItemText sx={{ pr: 2, fontSize: '2sx', width: '150px' }} primary={fio} />
-                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={share} />
                 <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={membershipfee} />
+                <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={share} />
                 <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={payshare} />
                 <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={phone} />
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={email} /> */}
