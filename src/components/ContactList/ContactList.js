@@ -60,6 +60,7 @@ function ContactList() {
   const result = useSelector(selectFilteredContacts);
   const closeModal = () => {
     setSelectedContact(null);
+    
   };
  
   const getFilteredContacts = data => {

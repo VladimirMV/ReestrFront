@@ -9,13 +9,12 @@ import {
   ListItemText,
   ListItemAvatar,
   Avatar,
-  ListItemSecondaryAction,
   useMediaQuery,
 } from '@mui/material';
 import {
   ContactDescr,
   ModalPictureWrapper,
-  WrapperBtns,
+  Item,
 } from './ContactItem.styled';
 
 // functions
@@ -54,6 +53,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
    const selectContact = { fio, phone, _id, membershipfee, 
     share,n,form , number, edrpu, passport, birthday, registrationplase, 
     adress, payshare,email, avatarUrl };
+    
     setSelectedContact(selectContact );
   };
   console.log("avatarUrl", avatarUrl);
@@ -72,7 +72,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
  
   return (
     <Container maxWidth="md"  >
-     
+     <Item>
       <List sx={{  width: "100%", marginLeft: 0, paddingLeft: 0 }}>
         { <ListItem key={_id}> 
          <Tooltip label="Click" color="#000" fontSize="xs">      
@@ -105,16 +105,17 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
                 {/* <ListItemText sx={{ pr: 2, fontSize: '2sx' }} primary={email} /> */}
               </>
             )}
-            <WrapperBtns>
+            {/* <WrapperBtns>
             <ListItemSecondaryAction>
            
          
               </ListItemSecondaryAction>
-              </WrapperBtns>
+              </WrapperBtns> */}
             </ContactDescr>
           </ListItem>
         }
           </List>
+          </Item>
           <ContactModal
         isOpen={selectedContact !== null}
         onClose={closeModal}

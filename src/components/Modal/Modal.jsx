@@ -41,7 +41,8 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
   const onDeleteContact = contactId => {
     if (window.confirm('Are you sure you want to delete the contact?')) {
      
-    dispatch(deleteContact(contactId));}
+    dispatch(deleteContact(contactId));
+    window.location.reload();}
   };
 
   function formatDate(dateString) {

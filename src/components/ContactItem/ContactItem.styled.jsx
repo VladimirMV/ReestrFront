@@ -10,8 +10,8 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #7b9cd0;
   width: 100%;
 
   color: ${props => props.theme.colors.black};
@@ -19,7 +19,7 @@ export const Item = styled.li`
   font-size: ${props => props.theme.fontSizes.s};
 
   @media screen and (min-width: 768px) {
-    gap: 16px;
+    gap: 12px;
   }
 
   span {
@@ -146,8 +146,8 @@ export const ContactDescr = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding-top: ${p => p.theme.space[2]}px;
-  padding-bottom: ${p => p.theme.space[2]}px;
+  /* padding-top: ${p => p.theme.space[2]}px;
+  padding-bottom: ${p => p.theme.space[2]}px; */
   padding-left: ${p => p.theme.space[1]}px;
   padding-right: ${p => p.theme.space[1]}px;
   width: 100%;

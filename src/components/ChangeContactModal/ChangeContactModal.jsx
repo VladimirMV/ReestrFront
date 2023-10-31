@@ -77,6 +77,7 @@ export const ChangeContactModal = ({
   const closeModal = () => {
     onClose();
     setModalIsOpen(false);
+    // window.location.reload();
   };
 
   const onSubmitHandler = (values, { resetForm }) => {
@@ -208,7 +209,7 @@ export const ChangeContactModal = ({
                   <FieldFormik 
                   type="text" 
                   name="birthday" 
-                  placeholder="дд/мм/гггг"
+                  placeholder="дд-мм-гггг"
                   />
            
                   <ErrorMessage name="birthday" component="span" />
