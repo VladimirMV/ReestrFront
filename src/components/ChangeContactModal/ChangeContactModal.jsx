@@ -81,12 +81,15 @@ export const ChangeContactModal = ({
   };
 
   const onSubmitHandler = (values, { resetForm }) => {
+    const fio = data?.fio || '';
+    const confirmationMessage = `Данные "${fio}" будут изменены. Продолжать?`;
+    if (window.confirm(confirmationMessage)) {
     const newFormValues = { ...formValues, ...values };
     setFormValues(newFormValues);
-    // console.log("newFormValues +++++++++++++++++",newFormValues)
     dispatch(changeContact(newFormValues));
     resetForm();
     closeModal();
+  };
   };
   // function handleDateChange(e) {
   //   const inputDate = e.target.value;
