@@ -7,7 +7,7 @@ import { Avatar, Chip } from '@mui/material';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-
+  console.log("user   MENU========",	user)
   const handleLogOut = () => dispatch(logOutUser());
 
   return (

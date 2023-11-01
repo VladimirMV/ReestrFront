@@ -15,6 +15,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/auth-operations';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { customStylesFonRegistration } from 'styles/fonStyle';
 
 const defaultTheme = createTheme({
@@ -31,7 +32,7 @@ export default function Register() {
   const onSignUp = location.pathname === '/register';
   const [empty, setEmpty] = useState({ name: false, email: false });
   const [passwordValid, setPasswordValid] = useState({ password: false });
-
+  const navigation = useNavigate();
   const handleSubmit = e => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -57,8 +58,12 @@ export default function Register() {
       setPasswordValid(prev => ({ ...prev, password: true }));
       return;
     }
-
     dispatch(registerUser(user));
+    console.log("user ========",	user)
+    navigation ('/');
+    const confirmationMessage =  'На ваш E-mail  отправлено письмо для  подтверждения адреса почты';
+    window.confirm(confirmationMessage);
+    window.location.reload();
   };
 
   return (

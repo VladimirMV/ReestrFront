@@ -17,7 +17,7 @@ export const registerUser = createAsyncThunk(
         position: 'bottom-right',
         autoClose: 1500,
       });
-      //console.log('register:', result);
+      console.log('register:', result);
       return result;
     } catch ({ response }) {
       return rejectWithValue(`Ooops! Wrong... Try again ...`);
