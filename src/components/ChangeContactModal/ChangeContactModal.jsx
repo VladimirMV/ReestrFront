@@ -77,7 +77,7 @@ export const ChangeContactModal = ({
   const closeModal = () => {
     onClose();
     setModalIsOpen(false);
-    // window.location.reload();
+     window.location.reload();
   };
 
   const onSubmitHandler = (values, { resetForm }) => {
