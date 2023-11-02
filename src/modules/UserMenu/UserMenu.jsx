@@ -7,7 +7,7 @@ import { Avatar, Chip } from '@mui/material';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  console.log("user   MENU========",	user)
+  console.log("user   MENU========",	user, user.avatarUrl)
   const handleLogOut = () => dispatch(logOutUser());
 
   return (
@@ -25,7 +25,7 @@ export const UserMenu = () => {
               alt="avatar"
               
               
-             src={`https://res.cloudinary.com/dzbll3bb6/image/upload/v1697575687/%D0%B0%D0%B2%D0%B0%D1%82%D0%B0%D1%80_lhmtcq.jpg`}
+             src={user.avatarUrl}
               sx={{ width: 24, height: 24 }}
             />
           </StyledBadge>
