@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const authInstance = axios.create({
-  //  baseURL: 'http://localhost:3000/api',
- baseURL: 'https://registry-s9xe.onrender.com/api',
+  baseURL: 'http://localhost:3000/api',
+//  baseURL: 'https://registry-s9xe.onrender.com/api',
   
 });
 
@@ -38,6 +38,7 @@ export const userLogout = async () => {
 export const userCurrent = async token => {
   setAuthHeader(token);
   const response = await authInstance.get('/auth/current');
+  console.log('userCurrent', response);
   return response;
 };
 

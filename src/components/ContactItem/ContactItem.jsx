@@ -56,7 +56,7 @@ export const ContactItem = ({  fio, phone, _id, membershipfee,
     
     setSelectedContact(selectContact );
   };
-  console.log("avatarUrl", avatarUrl);
+
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
   function stringAvatar( fio) {
      

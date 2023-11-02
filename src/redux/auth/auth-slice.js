@@ -11,7 +11,10 @@ import {
 import persistReducer from 'redux-persist/es/persistReducer';
 
 const initialState = {
-  user: { name: null, email: null },
+  user: { name: null, 
+     email: null,
+     status: 'user', 
+     avatarUrl: '//www.gravatar.com/avatar/69e90bc19451c872a6768adbd746c4c9' },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,

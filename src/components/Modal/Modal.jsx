@@ -15,6 +15,7 @@ import {
 import { customStyles } from 'styles/modalStyles';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
 import { Tooltip } from '@chakra-ui/react';
 // import DeleteIcon from '@mui/icons-material/Delete';
 import { IoPersonRemove } from 'react-icons/io5';
@@ -26,6 +27,7 @@ Modal.setAppElement('#root');
 
 export const ContactModal = ({ isOpen, data, onClose }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { user } = useAuth();
   const fontSize = { fontSize: '20px',color : '#3f47cc'};
   const openChangeModal = () => {
     setModalIsOpen(true);
@@ -102,6 +104,8 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         <p>{'Регистрация: ' + data?.registrationplase}</p>
         <p>{'Паспорт: ' + data?.passport}</p>
       </PictureDescr>
+
+      {user.status === 'admin' && (
       <ButtoneDescr>
       <Tooltip label="Delete" color="#000" fontSize="xs">  
               <Button 
@@ -121,7 +125,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
 
       
       </ButtoneDescr>
-
+      )}
       <ChangeContactModal
         isOpen={modalIsOpen}
         onClose={closeChangeModal}

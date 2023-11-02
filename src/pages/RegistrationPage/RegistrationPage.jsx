@@ -43,8 +43,6 @@ export default function Register() {
       password: data.get('password'),
     };
 
-    console.log('form reg user: ', user);
-
     if (user.name === '') {
       setEmpty(prev => ({ ...prev, name: true }));
       return;
@@ -59,7 +57,6 @@ export default function Register() {
       return;
     }
     dispatch(registerUser(user));
-    console.log("user ========",	user)
     navigation ('/');
     const confirmationMessage =  'На ваш E-mail  отправлено письмо для  подтверждения адреса почты';
     window.confirm(confirmationMessage);

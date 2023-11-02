@@ -7,7 +7,6 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await api.getAllContacts();
-      console.log("data contacts ========:", data);
       return data;
     } catch ({ response }) {
       return thunkAPI.rejectWithValue(`Ooops! Wrong... Try again ...`);
@@ -45,7 +44,7 @@ export const deleteContact = createAsyncThunk(
 export const changeContact = createAsyncThunk(
   'contacts/editContact',
   async (data, { rejectWithValue }) => {
-    // console.log("data changeContact ========:", data);
+  
     try {
       const { data: result } = await api.editContact(data);
 

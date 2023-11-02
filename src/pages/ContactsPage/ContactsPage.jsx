@@ -8,7 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import  ContactList  from 'components/ContactList/ContactList';
 import  Filter  from 'components/Filter/Filter';
 import { Section } from 'components/Section/Section';
-
+import { useAuth } from 'hooks/useAuth';
 import { customStylesFonContacts } from 'styles/fonStyle';
 const defaultTheme = createTheme({
   palette: {
@@ -24,6 +24,7 @@ const defaultTheme = createTheme({
 
  
 const Contacts = () => {
+  const { user } = useAuth();
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid
@@ -68,9 +69,11 @@ const Contacts = () => {
             }}
           >
             <Grid container spacing={2}>
-              <Section title="Members">
-               
+            
+              <Section title="Members"> 
+              {user.status === 'admin' &&      
                 <Filter />
+                }
                 <ContactList />
               </Section>
             </Grid>

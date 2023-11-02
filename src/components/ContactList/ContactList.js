@@ -18,6 +18,8 @@ import { ContactItem } from 'components/ContactItem/ContactItem';
 import {StyledButton} from '../ChangeContactModal/ChangeContactModal.styled';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { ContactModal } from 'components/Modal/Modal';
+import { useAuth } from 'hooks/useAuth';
+
 function ContactList() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -51,6 +53,9 @@ function ContactList() {
      adress, payshare,email, avatarUrl };
      setSelectedContact(selectContact );
    };
+
+   const { user } = useAuth();
+
   const dispatch = useDispatch();
  
   useEffect(() => {
@@ -101,14 +106,26 @@ const listTitle = ( <pre>{`ФИО                 Чл/взнос      Паи   
       {!error && !isLoading && filteredContacts?.length > 0 && (
         
         <List>
+     
+       {user.status === 'admin' && (
         <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
+        )}
+
+        {user.status === 'admin' && (
+          <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>)} 
+     
+     
+        {/* <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
         <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
         Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
+        */}
+       
         {!isSmallScreen && ( 
         <InfoTable>
           <span style={{  margin: '0', padding: '0' }}>{listTitle}</span>
         </InfoTable>
       )}
+
           <ul>
             {filteredContacts.map(({ fio, phone, _id, membershipfee, 
             share,n,form , number, edrpu, passport, birthday, registrationplase, 
@@ -137,15 +154,17 @@ const listTitle = ( <pre>{`ФИО                 Чл/взнос      Паи   
             })}
           </ul>
 
-
+          {user.status === 'admin' && (
           <div style={{ display: 'flex', justifyContent: 'center' }}>
           <StyledButton onClick={() => setModalData()} width="500px">
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <IoMdPersonAdd size="18" color="#3f47cc" />
     <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>ADD MEMBER</span>
   </div>
+  
 </StyledButton>
 </div>
+)}
         </List>
         
       )}
