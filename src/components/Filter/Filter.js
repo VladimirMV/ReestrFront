@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-slice';
 import { selectFilter } from 'redux/selectors';
-
+import { BsSearch } from 'react-icons/bs';
 import s from './Filter.module.css';
 
 function Filter() {
@@ -13,7 +13,9 @@ function Filter() {
   };
   return (
     <label className={s.label}>
-      Поиск по имени
+      <p className={s.title}>
+        <BsSearch size="24" className={s.icon} />{' '}
+      </p>
       <input
         className={s.input}
         type="text"
@@ -21,7 +23,6 @@ function Filter() {
         onChange={changeFilter}
       />
     </label>
-    
   );
 }
 

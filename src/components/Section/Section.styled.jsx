@@ -5,8 +5,8 @@ export const SectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // padding-top: ${props => props.theme.space[4]}px;
-  padding-bottom: ${props => props.theme.space[2]}px;
+  padding-top: ${props => props.theme.space[1]}px;
+  padding-bottom: ${props => props.theme.space[1]}px;
   // padding-bottom: 20px;
   // margin-bottom: 5px;
   max-width: 100%;

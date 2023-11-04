@@ -127,14 +127,7 @@ function ContactList() {
               <span style={{ fontWeight: 'bold', color: 'red' }}>
                 {sums.totalMembershipfee}{' '}
               </span>
-              грн.{' '}
-            </Info>
-          )}
-
-          {user.status === 'admin' && (
-            <Info>
-              {' '}
-              Паев:{' '}
+              грн. Паев:{' '}
               <span style={{ fontWeight: 'bold', color: 'red' }}>
                 {' '}
                 {sums.totalShare}{' '}
@@ -147,7 +140,6 @@ function ContactList() {
               грн.{' '}
             </Info>
           )}
-
           {!isSmallScreen && (
             <InfoTable>
               <span style={{ margin: '0', padding: '0' }}>{listTitle}</span>
@@ -201,7 +193,13 @@ function ContactList() {
           </ul>
 
           {user.status === 'admin' && (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '20px',
+              }}
+            >
               <StyledButton onClick={() => setModalData()} width="500px">
                 <div
                   style={{

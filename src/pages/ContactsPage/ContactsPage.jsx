@@ -61,7 +61,7 @@ const Contacts = () => {
         >
           <Box
             sx={{
-              my: 10,
+              my: 8,
               mx: 2,
               display: 'flex',
               flexDirection: 'column',
