@@ -10,12 +10,12 @@ import {
   selectFilteredContacts,
   selectFilter,
 } from 'redux/selectors';
-import { useMediaQuery} from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 
 import Loader from 'components/Loader/Loader';
-import { List, Info,InfoTable } from './ContactList.styled';
+import { List, Info, InfoTable } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import {StyledButton} from '../ChangeContactModal/ChangeContactModal.styled';
+import { StyledButton } from '../ChangeContactModal/ChangeContactModal.styled';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { ContactModal } from 'components/Modal/Modal';
 import { useAuth } from 'hooks/useAuth';
@@ -28,36 +28,48 @@ function ContactList() {
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
   const [selectedContact, setSelectedContact] = useState(null);
 
-  const  fio = '';
-  const phone = '' ;
-  const number= '' ;
-  const membershipfee=  '0';
-  const  share='0';
-  const  payshare= '0';
-  const  email=  '';
-  const  edrpu=  '';
-  const form= '';
-  const adress= '';
-  const  birthday= '';
-  const  registrationplase= '';
-  const passport=  '';
-  const  n= '0';
-  
-  const  avatarUrl= '0';
-  
+  const fio = '';
+  const phone = '';
+  const number = '';
+  const membershipfee = '0';
+  const share = '0';
+  const payshare = '0';
+  const email = '';
+  const edrpu = '';
+  const form = '';
+  const adress = '';
+  const birthday = '';
+  const registrationplase = '';
+  const passport = '';
+  const n = '0';
 
- 
+  const avatarUrl = '0';
+
   const setModalData = () => {
-    const selectContact = { fio, phone,   membershipfee, 
-     share,n,form , number, edrpu, passport, birthday, registrationplase, 
-     adress, payshare,email, avatarUrl };
-     setSelectedContact(selectContact );
-   };
+    const selectContact = {
+      fio,
+      phone,
+      membershipfee,
+      share,
+      n,
+      form,
+      number,
+      edrpu,
+      passport,
+      birthday,
+      registrationplase,
+      adress,
+      payshare,
+      email,
+      avatarUrl,
+    };
+    setSelectedContact(selectContact);
+  };
 
-   const { user } = useAuth();
+  const { user } = useAuth();
 
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -65,37 +77,40 @@ function ContactList() {
   const result = useSelector(selectFilteredContacts);
   const closeModal = () => {
     setSelectedContact(null);
-    
   };
- 
+
   const getFilteredContacts = data => {
     if (filter.toLowerCase() && !data.length) {
       // alert(`No contacts matching your request`);
     }
     return data;
   };
-  
-  // Function to calculate sums
-function calculateSums(data) {
-  let totalMembershipfee = 0;
-  let totalShare = 0;
-  let totalPayshare = 0;
 
-  for (const record of data) {
-    totalMembershipfee += record.membershipfee;
-    totalShare += record.share;
-    totalPayshare += record.payshare;
+  // Function to calculate sums
+  function calculateSums(data) {
+    let totalMembershipfee = 0;
+    let totalShare = 0;
+    let totalPayshare = 0;
+
+    for (const record of data) {
+      totalMembershipfee += record.membershipfee;
+      totalShare += record.share;
+      totalPayshare += record.payshare;
+    }
+
+    return { totalMembershipfee, totalShare, totalPayshare };
   }
 
-  return { totalMembershipfee, totalShare, totalPayshare };
-}
+  // Call the function and get the sums
+  const sums = calculateSums(contacts);
+  const listTitle = (
+    <pre>{`ФИО                 Чл/взнос      Паи       Выплаты        Телефон `}</pre>
+  );
 
-// Call the function and get the sums
-const sums = calculateSums(contacts);
-const listTitle = ( <pre>{`ФИО                 Чл/взнос      Паи       Выплаты        Телефон `}</pre>
-);
-
-  const filteredContacts = getFilteredContacts(result);
+  //
+  const filteredContacts = getFilteredContacts(result).sort(
+    (a, b) => a.n - b.n
+  );
   return (
     <>
       {isLoading && contacts?.length === 0 && <Loader />}
@@ -104,71 +119,114 @@ const listTitle = ( <pre>{`ФИО                 Чл/взнос      Паи   
         <Info>Contacts not found</Info>
       )}
       {!error && !isLoading && filteredContacts?.length > 0 && (
-        
         <List>
-     
-       {user.status === 'admin' && (
-        <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
-        )}
+          {user.status === 'admin' && (
+            <Info>
+              {' '}
+              Всего членских взносов :{' '}
+              <span style={{ fontWeight: 'bold', color: 'red' }}>
+                {sums.totalMembershipfee}{' '}
+              </span>
+              грн.{' '}
+            </Info>
+          )}
 
-        {user.status === 'admin' && (
-          <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>)} 
-     
-     
-        {/* <Info>  Всего членских взносов : <span style={{ fontWeight: 'bold', color: 'red' }}>{sums.totalMembershipfee} </span>грн. </Info>
-        <Info>  Паев: <span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalShare} </span>грн.  
-        Выплат по паям:<span style={{ fontWeight: 'bold', color: 'red' }}> {sums.totalPayshare}</span> грн. </Info>
-        */}
-       
-        {!isSmallScreen && ( 
-        <InfoTable>
-          <span style={{  margin: '0', padding: '0' }}>{listTitle}</span>
-        </InfoTable>
-      )}
+          {user.status === 'admin' && (
+            <Info>
+              {' '}
+              Паев:{' '}
+              <span style={{ fontWeight: 'bold', color: 'red' }}>
+                {' '}
+                {sums.totalShare}{' '}
+              </span>
+              грн. Выплат по паям:
+              <span style={{ fontWeight: 'bold', color: 'red' }}>
+                {' '}
+                {sums.totalPayshare}
+              </span>{' '}
+              грн.{' '}
+            </Info>
+          )}
+
+          {!isSmallScreen && (
+            <InfoTable>
+              <span style={{ margin: '0', padding: '0' }}>{listTitle}</span>
+            </InfoTable>
+          )}
 
           <ul>
-            {filteredContacts.map(({ fio, phone, _id, membershipfee, 
-            share,n,form , number, edrpu, passport, birthday, registrationplase, 
-            adress, payshare, email, avatarUrl}) => {
-              return (
-                <Fragment key={_id}>
-                  <ContactItem fio={fio} 
-                  phone={phone} 
-                  _id={_id} 
-                  membershipfee ={membershipfee} 
-                  share ={share}                 
-                  n ={n}
-                  form = {form}
-                  number = {number}
-                  edrpu = {edrpu}
-                  passport = {passport}
-                  birthday  = {birthday}
-                  registrationplase = {registrationplase}
-                  adress  = {adress}
-                  payshare  = {payshare} 
-                  email= {email} 
-                  avatarUrl = {avatarUrl}             
-                  />
-                </Fragment>
-              );
-            })}
+            {filteredContacts.map(
+              ({
+                fio,
+                phone,
+                _id,
+                membershipfee,
+                share,
+                n,
+                form,
+                number,
+                edrpu,
+                passport,
+                birthday,
+                registrationplase,
+                adress,
+                payshare,
+                email,
+                avatarUrl,
+              }) => {
+                return (
+                  <Fragment key={_id}>
+                    <ContactItem
+                      fio={fio}
+                      phone={phone}
+                      _id={_id}
+                      membershipfee={membershipfee}
+                      share={share}
+                      n={n}
+                      form={form}
+                      number={number}
+                      edrpu={edrpu}
+                      passport={passport}
+                      birthday={birthday}
+                      registrationplase={registrationplase}
+                      adress={adress}
+                      payshare={payshare}
+                      email={email}
+                      avatarUrl={avatarUrl}
+                    />
+                  </Fragment>
+                );
+              }
+            )}
           </ul>
 
           {user.status === 'admin' && (
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <StyledButton onClick={() => setModalData()} width="500px">
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <IoMdPersonAdd size="18" color="#3f47cc" />
-    <span style={{ fontWeight: 'bold', color: '#3f47cc', marginLeft: '4px' }}>ADD MEMBER</span>
-  </div>
-  
-</StyledButton>
-</div>
-)}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <StyledButton onClick={() => setModalData()} width="500px">
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <IoMdPersonAdd size="18" color="#3f47cc" />
+                  <span
+                    style={{
+                      fontWeight: 'bold',
+                      color: '#3f47cc',
+                      marginLeft: '4px',
+                    }}
+                  >
+                    ADD MEMBER
+                  </span>
+                </div>
+              </StyledButton>
+            </div>
+          )}
         </List>
-        
       )}
-       <ContactModal
+      <ContactModal
         isOpen={selectedContact !== null}
         onClose={closeModal}
         data={selectedContact}
@@ -178,5 +236,3 @@ const listTitle = ( <pre>{`ФИО                 Чл/взнос      Паи   
 }
 
 export default ContactList;
-
-         

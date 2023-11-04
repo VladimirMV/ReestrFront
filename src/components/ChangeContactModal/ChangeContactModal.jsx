@@ -4,6 +4,12 @@ import 'yup-phone';
 // import moment from 'moment';
 // redux
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
+import { TbPigMoney } from 'react-icons/tb';
+import { AiOutlineMail } from 'react-icons/ai';
+import { MdLocationPin } from 'react-icons/md';
+
+
+import { FaBirthdayCake } from 'react-icons/fa';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { schema } from '../../services/schemaYup';
 import {
@@ -46,7 +52,7 @@ export const ChangeContactModal = ({
     edrpu:  '',
     form:   '',
     adress:  '',
-    birthday: '',
+    birthday: '01-01-2000',
     registrationplase:  '',
     passport:  '',
     n: '0',
@@ -122,7 +128,10 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>ФИО</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="fio" placeholder="fio" />
+                  <FieldFormik type="text" 
+                  name="fio" 
+                  placeholder="fio"
+                  required />
                   <ErrorMessage name="fio" component="span" />
                 </FormField>
                 
@@ -135,16 +144,19 @@ export const ChangeContactModal = ({
                     type="tel"
                     name="phone"
                     placeholder="+38-050-123-45-67"
+                    required
                   />
                   <ErrorMessage name="phone" component="span" />
                 </FormField>
  
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <AiOutlineMail />
                     <LabelSpan>e-mail</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="email" placeholder="email" />
+                  <FieldFormik type="email" name="email" 
+                  placeholder="email"
+                  required />
                   <ErrorMessage name="email" component="span" />
                 </FormField>
 
@@ -153,31 +165,39 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>Номер членского билета</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="number" placeholder="number" />
+                  <FieldFormik type="text" name="number" 
+                  placeholder="number"
+                  required />
                   <ErrorMessage name="number" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <TbPigMoney />
                     <LabelSpan>Членський внесок (грн)</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="membershipfee" placeholder="membershipfee" />
+                  <FieldFormik type="number" name="membershipfee" 
+                  placeholder="membershipfee"
+                  required />
                   <ErrorMessage name="membershipfee" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <TbPigMoney />
                     <LabelSpan>ПАЇ (грн)</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="share" placeholder="share" />
+                  <FieldFormik type="number" name="share" 
+                  placeholder="share"
+                  required />
                   <ErrorMessage name="share" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <TbPigMoney />
                     <LabelSpan>Виплати на паї (грн)</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="payshare" placeholder="payshare" />
+                  <FieldFormik type="number" name="payshare" 
+                  placeholder="payshare"
+                  required />
                   <ErrorMessage name="payshare" component="span" />
                 </FormField>
                 <FormField>
@@ -185,44 +205,58 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>код ЄДРПОУ</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="edrpu" placeholder="edrpu" />
+                  <FieldFormik type="number" name="edrpu" 
+                  placeholder="edrpu"
+                  required />
                   <ErrorMessage name="edrpu" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
                     <BsPersonFill />
-                    <LabelSpan>Форма</LabelSpan>
+                    <LabelSpan>Форма членства Ч/АЧ</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="form" placeholder="form" />
+                  <FieldFormik type="text" name="form" 
+                  placeholder="Ч/АЧ"
+                  pattern="^(Ч|АЧ)$"
+                  required />
                   <ErrorMessage name="form" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <MdLocationPin />
                     <LabelSpan>Адрес</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="adress" placeholder="adress" />
+                  <FieldFormik type="text" name="adress" 
+                  placeholder="adress"
+                  required />
                   <ErrorMessage name="adress" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <FaBirthdayCake />
                     <LabelSpan>Дата рождения</LabelSpan>
                   </LabelWrapper>
                   <FieldFormik 
-                  type="text" 
+                  type="date" 
                   name="birthday" 
-                  placeholder="дд-мм-гггг"
+                  value={formik.values.birthday}
+                  placeholder="birthday"
+                  min="1950-04-01"
+                  max="2010-04-20"
+                // required
                   />
            
                   <ErrorMessage name="birthday" component="span" />
                 </FormField>
                 <FormField>
                   <LabelWrapper>
-                    <BsPersonFill />
+                    <MdLocationPin />
                     <LabelSpan>Регистрация</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="registrationplase" placeholder="registrationplase" />
+                  <FieldFormik type="text" name="registrationplase" 
+                  placeholder="registrationplase" 
+                  required
+                  />
                   <ErrorMessage name="registrationplase" component="span" />
                 </FormField>
                 <FormField>
@@ -230,7 +264,9 @@ export const ChangeContactModal = ({
                     <BsPersonFill />
                     <LabelSpan>Паспорт</LabelSpan>
                   </LabelWrapper>
-                  <FieldFormik type="text" name="passport" placeholder="passport" />
+                  <FieldFormik type="text" name="passport" 
+                  placeholder="passport" 
+                  required/>
                   <ErrorMessage name="passport" component="span" />
                 </FormField>
                 
