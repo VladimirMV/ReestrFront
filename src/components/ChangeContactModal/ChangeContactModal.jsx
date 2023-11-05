@@ -210,17 +210,23 @@ export const ChangeContactModal = ({
                   required />
                   <ErrorMessage name="edrpu" component="span" />
                 </FormField>
+               
                 <FormField>
-                  <LabelWrapper>
-                    <BsPersonFill />
-                    <LabelSpan>Форма членства Ч/АЧ</LabelSpan>
-                  </LabelWrapper>
-                  <FieldFormik type="text" name="form" 
-                  placeholder="Ч/АЧ"
-                  pattern="^(Ч|АЧ)$"
-                  required />
-                  <ErrorMessage name="form" component="span" />
-                </FormField>
+                  
+          <div id="form">Форма членства Ч/АЧ</div>
+          <div role="group" aria-labelledby="form">
+            <label>
+              <FieldFormik type="radio" name="form" value="Ч" size="16px" />
+                      {' '}Член{'    '}
+            </label>
+            <label>
+              <FieldFormik type="radio" name="form" value="АЧ" />
+              {'  '} Ассоциированный член
+            </label>        
+          </div>
+
+        </FormField>
+
                 <FormField>
                   <LabelWrapper>
                     <MdLocationPin />
