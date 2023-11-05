@@ -16,6 +16,7 @@ import { customStyles } from 'styles/modalStyles';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
+// import {useMediaQuery} from '@mui/material';
 import { Tooltip } from '@chakra-ui/react';
 // import DeleteIcon from '@mui/icons-material/Delete';
 import { IoPersonRemove } from 'react-icons/io5';
@@ -28,7 +29,17 @@ Modal.setAppElement('#root');
 export const ContactModal = ({ isOpen, data, onClose }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const { user } = useAuth();
-  const fontSize = { fontSize: '20px',color : '#3f47cc'};
+  // const isSmallScreen = useMediaQuery('(max-width: 768px)');
+  
+
+  const fontSize = {
+    fontSize: '30px', color: '#3f47cc', fontWeight: 'bold'
+  };
+  if (window.matchMedia('(max-width: 768px)').matches) {
+  fontSize.fontSize = '20px';
+}
+
+  
   const openChangeModal = () => {
     setModalIsOpen(true);
   };
@@ -36,6 +47,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
   const closeChangeModal = () => {
     setModalIsOpen(false);
     onClose();
+
   };
 
   const dispatch = useDispatch();
@@ -80,10 +92,10 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
         </BorderOutside>
       </PhotoWrap>
       <PictureDescr>
-      <p>{'N: ' + data?.number}</p>
-     
-        <p style={fontSize}>{data?.fio}</p>
-      
+
+      <p style={fontSize}>{data?.fio}</p>
+        <p>{'N: ' + data?.number}</p>
+
         <p> {'Членський внесок: '}
        <span style={{ fontWeight: 'bold', color: 'red' }}>{data?.membershipfee + ' грн'}</span></p>
        <p> {'ПАЇ: '}
