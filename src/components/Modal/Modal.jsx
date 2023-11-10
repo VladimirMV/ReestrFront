@@ -22,7 +22,7 @@ import { Tooltip } from '@chakra-ui/react';
 import { IoPersonRemove } from 'react-icons/io5';
 import { TfiPencil } from 'react-icons/tfi';
 import { ChangeContactModal } from 'components/ChangeContactModal/ChangeContactModal';
-import defaultImageUrl from '../../img/nofotobl.png';
+import DefaultImageUrl from '../../img/nofotobl.png';
 import { deleteContact } from 'redux/contacts/contacts-operations';
 Modal.setAppElement('#root');
 
@@ -60,7 +60,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
     dispatch(deleteContact(contactId));
     window.location.reload();}
   };
-
+ 
   function formatDate(dateString) {
     if (dateString) {
       const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
@@ -85,7 +85,7 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
           <BorderInside >
             <PhotoThumb   >
              
-              <ModalPicture src={data?.avatarUrl|| defaultImageUrl} alt="----photo " />
+              <ModalPicture src={data?.avatarUrl || DefaultImageUrl} alt="----photo " />
               
             </PhotoThumb>
           </BorderInside>
