@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 export const authInstance = axios.create({
+//
   baseURL: 'http://localhost:3000/api',
-  //  baseURL: 'https://registry-s9xe.onrender.com/api',
+  baseURL: 'https://registry-s9xe.onrender.com/api',
 });
 
 export const setAuthHeader = token => {
